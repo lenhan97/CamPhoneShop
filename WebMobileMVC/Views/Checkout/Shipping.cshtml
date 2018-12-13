@@ -1,0 +1,113 @@
+﻿
+@{
+    Layout = "_Layout";
+}
+
+<!-- Start Page Title -->
+<div class="page-title">
+    <div class="container">
+        <div class="column">
+            <h1>Tiến hành đặt hàng</h1>
+        </div>
+        <div class="column">
+            <ul class="breadcrumbs">
+                <li><a href="index-1.html">Trang chủ</a></li>
+                <li class="separator">&nbsp;</li>
+                <li>Tiến hành đặt hàng</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- End Page Title -->
+<!-- Start Checkout Content -->
+<div class="container padding-top-1x padding-bottom-3x">
+    <div class="row">
+        <div class="col-lg-1"></div>
+        <!-- Start Checkout Shipping -->
+        <div class="col-lg-10">
+            <div class="checkout-steps">
+                <a href="#">4. Hoàn tất</a>
+                <a class="active" href="checkout-shipping.html"><span class="angle"></span>3. Vận chuyển</a>
+                <a class="completed" href="checkout-review.html"><span class="step-indicator icon-circle-check"></span><span class="angle"></span>2. Thông tin đơn hàng</a>
+                <a class="completed" href="checkout-address.html"><span class="step-indicator icon-circle-check"></span></span><span class="angle"></span>1. Thông tin người nhận</a>
+            </div>
+            <h4>Hãy chọn đơn vị vận chuyển</h4>
+            <hr class="padding-bottom-1x">
+            <div class="table-responsive">
+                <table class="table table-hover">
+                    <thead class="thead-default">
+                        <tr>
+                            <th></th>
+                            <th>Đơn vị vận chuyển</th>
+                            <th>Thời gian vận chuyển</th>
+                            <th>Phí vận chuyển</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="align-middle">
+                                <div class="custom-control custom-radio mb-0">
+                                    <input class="custom-control-input" type="radio" id="courier" name="shipping-method" checked>
+                                    <label class="custom-control-label" for="courier"></label>
+                                </div>
+                            </td>
+                            <td class="align-middle"><span class="text-medium">Courier</span><br><span class="text-muted text-sm">All Addresses</span></td>
+                            <td class="align-middle">7 - 9 Days</td>
+                            <td class="align-middle">$22.00</td>
+                        </tr>
+                        <tr>
+                            <td class="align-middle">
+                                <div class="custom-control custom-radio mb-0">
+                                    <input class="custom-control-input" type="radio" id="local" name="shipping-method">
+                                    <label class="custom-control-label" for="local"></label>
+                                </div>
+                            </td>
+                            <td class="align-middle"><span class="text-medium">Local Shipping</span><br><span class="text-muted text-sm">All Addresses</span></td>
+                            <td class="align-middle">6 - 7 Days</td>
+                            <td class="align-middle">$10.00</td>
+                        </tr>
+                        <tr>
+                            <td class="align-middle">
+                                <div class="custom-control custom-radio mb-0">
+                                    <input class="custom-control-input" type="radio" id="ups" name="shipping-method">
+                                    <label class="custom-control-label" for="ups"></label>
+                                </div>
+                            </td>
+                            <td class="align-middle"><span class="text-medium">Ground Shipping</span><br><span class="text-muted text-sm">All Addresses</span></td>
+                            <td class="align-middle">2 - 4 Days</td>
+                            <td class="align-middle">$18.00</td>
+                        </tr>
+                        <tr>
+                            <td class="align-middle">
+                                <div class="custom-control custom-radio mb-0">
+                                    <input class="custom-control-input" type="radio" id="global" name="shipping-method">
+                                    <label class="custom-control-label" for="global"></label>
+                                </div>
+                            </td>
+                            <td class="align-middle"><span class="text-medium">Inspina Global</span><br><span class="text-muted text-sm">All Addresses</span></td>
+                            <td class="align-middle">3 - 4 days</td>
+                            <td class="align-middle">$25.00</td>
+                        </tr>
+                        <tr>
+                            <td class="align-middle">
+                                <div class="custom-control custom-radio mb-0">
+                                    <input class="custom-control-input" type="radio" id="locker" name="shipping-method">
+                                    <label class="custom-control-label" for="locker"></label>
+                                </div>
+                            </td>
+                            <td class="align-middle"><span class="text-medium">Inspina Locker</span><br><span class="text-muted text-sm">All Addresses</span></td>
+                            <td class="align-middle">2 - 5 days</td>
+                            <td class="align-middle">$10.00</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="checkout-footer margin-top-1x">
+                <div class="column"><a class="btn btn-outline-secondary" href="checkout-review.html"><i class="icon-arrow-left"></i><span class="hidden-xs-down">&nbsp;Quay lại</span></a></div>
+                <div class="column"><a class="btn btn-primary" href="checkout-complete.html">Hoàn tất&nbsp;</a></div>
+            </div>
+        </div>
+        <!-- End Checkout Shipping -->
+    </div>
+</div>
+<!-- End Product Content -->

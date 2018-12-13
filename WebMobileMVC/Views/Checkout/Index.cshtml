@@ -1,0 +1,86 @@
+﻿
+@{
+    Layout = "_Layout";
+}
+
+<!-- Start Page Title -->
+<div class="page-title">
+    <div class="container">
+        <div class="column">
+            <h1>Tiến hành đặt hàng</h1>
+        </div>
+        <div class="column">
+            <ul class="breadcrumbs">
+                <li><a href="index-1.html">Trang chủ</a></li>
+                <li class="separator">&nbsp;</li>
+                <li>Tiến hành đặt hàng</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- End Page Title -->
+<!-- Start Checkout Content -->
+<div class="container padding-top-1x padding-bottom-3x">
+    <div class="row">
+        <div class="col-lg-1"></div>
+        <!-- Start Checkout Address -->
+        <div class="col-lg-10">
+            <div class="checkout-steps">
+                <a href="#">4. Hoàn tất</a>
+                <a href="#"><span class="angle"></span>3. Vận chuyển</a>
+                <a href="#"><span class="angle"></span>2. Thông tin đơn hàng</a>
+                <a class="active" href="checkout-address.html"><span class="angle"></span>1. Thông tin người nhận</a>
+            </div>
+            <h4>Hãy nhập thông tin nhận hàng</h4>
+            <hr class="padding-bottom-1x">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label for="checkout-fn">Họ</label>
+                        <input class="form-control" type="text" id="checkout-fn">
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label for="checkout-ln">Tên</label>
+                        <input class="form-control" type="text" id="checkout-ln">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label for="checkout-email">Địa chỉ E-Mail</label>
+                        <input class="form-control" type="email" id="checkout-email">
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label for="checkout-phone">Số điện thoại</label>
+                        <input class="form-control" type="text" id="checkout-phone">
+                    </div>
+                </div>
+            </div>
+            <div class="row padding-bottom-1x">
+                <div class="col-sm-12">
+                    <div class="form-group">
+                        <label for="checkout-address1">Địa chỉ nhận hàng</label>
+                        <input class="form-control" type="text" id="checkout-address1">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="custom-control custom-checkbox">
+                    <input class="custom-control-input" type="checkbox" id="same_address" checked>
+                    <label class="custom-control-label" for="same_address">Sử dụng thông tin tài khoản</label>
+                </div>
+            </div>
+            <div class="checkout-footer">
+                <div class="column"><a class="btn btn-outline-secondary" href="cart.html"><i class="icon-arrow-left"></i><span class="hidden-xs-down">&nbsp;Quay lại giỏ hàng</span></a></div>
+                <div class="column"><a class="btn btn-primary" href="checkout-review.html"><span class="hidden-xs-down">Tiếp tục&nbsp;</span><i class="icon-arrow-right"></i></a></div>
+            </div>
+        </div>
+        <!-- End Checkout Address -->
+    </div>
+</div>
+<!-- End Product Content -->

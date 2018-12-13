@@ -1,0 +1,23 @@
+﻿<Properties StartupConfiguration="{33B76771-2017-45D0-B505-9E6689FEF455}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="ThuongMaiDienTuAPI/Services/UserService.cs">
+    <Files>
+      <File FileName="ThuongMaiDienTuAPI/Services/HoaDonService.cs" Line="27" Column="10" />
+      <File FileName="ThuongMaiDienTuAPI/Services/SanPhamService.cs" Line="1" Column="1" />
+      <File FileName="ThuongMaiDienTuAPI/Services/KhuyenMaiService.cs" Line="30" Column="42" />
+      <File FileName="ThuongMaiDienTuAPI/Entities/KhuyenMai.cs" Line="20" Column="49" />
+      <File FileName="ThuongMaiDienTuAPI/Services/SellerService.cs" Line="1" Column="1" />
+      <File FileName="ThuongMaiDienTuAPI/Services/UserService.cs" Line="1" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches>
+    <Watch file="../../../../../InventoryService/InventoryService/Services/InventoryServices.cs" line="4" offsetX="468" offsetY="45" expression="IInventoryServices" liveUpdate="False" />
+  </MonoDevelop.Ide.DebuggingService.PinnedWatches>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.ThuongMaiDienTuAPI PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="/Users/LamHan/ProjectASP/ThuongMaiDienTuAPI/ThuongMaiDienTuAPI/Services/SanPhamService.cs" relfile="ThuongMaiDienTuAPI/Services/SanPhamService.cs" line="77" column="1" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

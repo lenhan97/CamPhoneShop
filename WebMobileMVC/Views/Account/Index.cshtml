@@ -1,0 +1,87 @@
+﻿
+@{
+    Layout = "_Layout";
+}
+
+<!-- Start Page Title -->
+<div class="page-title">
+    <div class="container">
+        <div class="column">
+            <h1>Thông tin tài khoản</h1>
+        </div>
+        <div class="column">
+            <ul class="breadcrumbs">
+                <li><a href="index-1.html">Trang chủ</a></li>
+                <li class="separator">&nbsp;</li>
+                <li>Thông tin tài khoản</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- End Page Title -->
+<!-- Start My Profile -->
+<div class="container padding-top-1x padding-bottom-3x">
+    <div class="row">
+        <div class="col-lg-4">
+            <aside class="user-info-wrapper">
+                <div class="user-cover account-details">
+                    <div class="info-label" data-toggle="tooltip" title="You currently have 530 Reward Points to spend"><i class="icon-medal"></i>530 Điểm</div>
+                </div>
+                <div class="user-info">
+                    <div class="user-avatar"><a class="edit-avatar" href="#"></a><img src="/assets/images/account/user-ava.jpg" alt="User"></div>
+                    <div class="user-data">
+                        <h4>Tony Stark</h4><span>Joined February 06, 2018</span>
+                    </div>
+                </div>
+            </aside>
+            <nav class="list-group">
+                <a class="list-group-item active" href="account-profile.html"><i class="icon-head"></i>Thông tin tài khoản</a>
+                <a class="list-group-item" href="account-bank.html"><i class="icon-columns"></i>Ngân hàng</a>
+                <a class="list-group-item with-badge" href="account-orders.html"><i class="icon-bag"></i>Đơn hàng<span class="badge badge-primary badge-pill">6</span></a>
+                <a class="list-group-item with-badge" href="account-wishlist.html"><i class="icon-heart"></i>Sản phẩm đã thích<span class="badge badge-primary badge-pill">3</span></a>
+                <a class="list-group-item with-badge" href="account-notification.html"><i class="icon-bell"></i>Thông báo<span class="badge badge-primary badge-pill">4</span></a>
+                <a class="list-group-item" href="account-changepass.html"><i class="icon-repeat"></i>Đổi mật khẩu</a>
+            </nav>
+        </div>
+        <div class="col-lg-8">
+            <div class="padding-top-2x mt-2 hidden-lg-up"></div>
+            <form class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="account-fn">Họ</label>
+                        <input class="form-control" type="text" id="account-fn" placeholder="Tony" required>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="account-ln">Tên</label>
+                        <input class="form-control" type="text" id="account-ln" placeholder="Stark" required>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="account-email">E-Mail</label>
+                        <input class="form-control" type="email" id="account-email" placeholder="tony.stark@gmail.com" required>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="account-phone">Số điện thoại</label>
+                        <input class="form-control" type="text" id="account-phone" placeholder="888 888 8888" required>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="form-group">
+                        <label for="checkout-address1">Địa chỉ</label>
+                        <input class="form-control" type="text" id="checkout-address1">
+                    </div>
+                </div>
+                <div class="col-12">
+                    <hr class="mt-2 mb-3">
+                    <center><button class="btn btn-primary" type="button" data-toast data-toast-position="topRight" data-toast-type="success" data-toast-icon="icon-circle-check" data-toast-title="Success!" data-toast-message="Your profile updated successfuly.">Lưu</button></center>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- End My Profile -->
