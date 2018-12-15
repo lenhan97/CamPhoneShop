@@ -1,6 +1,6 @@
 ﻿namespace ThuongMaiDienTuAPI.Helpers
 {
-    public class ConstantVariable
+    public static class ConstantVariable
     {
         public static class UserPermission
         {
@@ -40,5 +40,6 @@
             public static string TOP = "TOP";
             public static string MIDDLE = "MIDDLE";
         }
+        public static string ConnectionString { get; set; }
     }
 }

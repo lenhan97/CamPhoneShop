@@ -94,3 +94,17 @@ D:/Project/PTTKHTDN/ecommerce_api/ThuongMaiDienTuAPI/ThuongMaiDienTuAPI/obj/Debu
 /Users/LamHan/ProjectASP/ThuongMaiDienTuAPI/ThuongMaiDienTuAPI/obj/Debug/netcoreapp2.1/ThuongMaiDienTuAPI.RazorTargetAssemblyInfo.cache
 /Users/LamHan/ProjectASP/ThuongMaiDienTuAPI/ThuongMaiDienTuAPI/obj/Debug/netcoreapp2.1/ThuongMaiDienTuAPI.dll
 /Users/LamHan/ProjectASP/ThuongMaiDienTuAPI/ThuongMaiDienTuAPI/obj/Debug/netcoreapp2.1/ThuongMaiDienTuAPI.pdb
+D:\Project\TMDT\CamPhoneShop\ThuongMaiDienTuAPI\bin\Debug\netcoreapp2.1\ThuongMaiDienTuAPI.deps.json
+D:\Project\TMDT\CamPhoneShop\ThuongMaiDienTuAPI\bin\Debug\netcoreapp2.1\ThuongMaiDienTuAPI.runtimeconfig.json
+D:\Project\TMDT\CamPhoneShop\ThuongMaiDienTuAPI\bin\Debug\netcoreapp2.1\ThuongMaiDienTuAPI.runtimeconfig.dev.json
+D:\Project\TMDT\CamPhoneShop\ThuongMaiDienTuAPI\bin\Debug\netcoreapp2.1\ThuongMaiDienTuAPI.dll
+D:\Project\TMDT\CamPhoneShop\ThuongMaiDienTuAPI\bin\Debug\netcoreapp2.1\ThuongMaiDienTuAPI.pdb
+D:\Project\TMDT\CamPhoneShop\ThuongMaiDienTuAPI\obj\Debug\netcoreapp2.1\ThuongMaiDienTuAPI.csprojAssemblyReference.cache
+D:\Project\TMDT\CamPhoneShop\ThuongMaiDienTuAPI\obj\Debug\netcoreapp2.1\ThuongMaiDienTuAPI.csproj.CoreCompileInputs.cache
+D:\Project\TMDT\CamPhoneShop\ThuongMaiDienTuAPI\obj\Debug\netcoreapp2.1\ThuongMaiDienTuAPI.RazorAssemblyInfo.cache
+D:\Project\TMDT\CamPhoneShop\ThuongMaiDienTuAPI\obj\Debug\netcoreapp2.1\ThuongMaiDienTuAPI.RazorAssemblyInfo.cs
+D:\Project\TMDT\CamPhoneShop\ThuongMaiDienTuAPI\obj\Debug\netcoreapp2.1\ThuongMaiDienTuAPI.AssemblyInfoInputs.cache
+D:\Project\TMDT\CamPhoneShop\ThuongMaiDienTuAPI\obj\Debug\netcoreapp2.1\ThuongMaiDienTuAPI.AssemblyInfo.cs
+D:\Project\TMDT\CamPhoneShop\ThuongMaiDienTuAPI\obj\Debug\netcoreapp2.1\ThuongMaiDienTuAPI.RazorTargetAssemblyInfo.cache
+D:\Project\TMDT\CamPhoneShop\ThuongMaiDienTuAPI\obj\Debug\netcoreapp2.1\ThuongMaiDienTuAPI.dll
+D:\Project\TMDT\CamPhoneShop\ThuongMaiDienTuAPI\obj\Debug\netcoreapp2.1\ThuongMaiDienTuAPI.pdb

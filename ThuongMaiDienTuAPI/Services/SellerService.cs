@@ -9,6 +9,7 @@ using ThuongMaiDienTuAPI.Entities;
 using ThuongMaiDienTuAPI.Helpers;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Storage;
+using ThuongMaiDienTuAPI.Dtos;
 
 namespace ThuongMaiDienTuAPI.Services
 {
@@ -69,6 +70,20 @@ namespace ThuongMaiDienTuAPI.Services
                     return false;
                 }
             }
+        }
+
+        public async Task<bool> Update(int idSeller,SellerUpdateDto sellerUpdateDto)
+        {
+            Seller seller = await db.Seller.FindAsync(idSeller);
+            seller.Ten = sellerUpdateDto.Ten;
+            seller.SDT = sellerUpdateDto.SDT;
+            seller.DiaChi.Duong = sellerUpdateDto.DiaChi.Duong;
+            seller.DiaChi.SoNha = sellerUpdateDto.DiaChi.SoNha;
+            seller.DiaChi.TinhTP = sellerUpdateDto.DiaChi.TinhTP;
+            seller.DiaChi.PhuongXa = seller.DiaChi.PhuongXa;
+            seller.DiaChi.QuanHuyen = seller.DiaChi.QuanHuyen;
+            await db.SaveChangesAsync();
+            return true;
         }
 
         public async Task<bool> VerifyMail(int idUser, string code)

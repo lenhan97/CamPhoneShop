@@ -28,6 +28,9 @@ namespace ThuongMaiDienTuAPI.Helpers
             CreateMap<SanPham, SanPhamCommonViewDto>();
             CreateMap<HoaDonDto, HoaDon>();
             CreateMap<ChiTietHDDto, ChiTietHD>();
+            CreateMap<GoiDichVuDto, GoiDichVu>();
+            CreateMap<DangKyDichVuDto, DangKyDichVu>();
+            CreateMap<SellerUpdateDto, Seller>();
         }
     }
 }

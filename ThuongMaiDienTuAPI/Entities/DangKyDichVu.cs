@@ -12,5 +12,7 @@ namespace ThuongMaiDienTuAPI.Entities
         [Required]
         public int IDGoiDichVu { get; set; }
         public DateTime ThoiGianDangKy { get; set; }
+
+        public GoiDichVu GoiDichVu { get; set; }
     }
 }

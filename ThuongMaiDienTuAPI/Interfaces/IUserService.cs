@@ -14,5 +14,6 @@ namespace ThuongMaiDienTuAPI.Interfaces
         Task<User> Get(string username);
         Task<User> Login(LoginDto login);
         Task<bool> Add(KhachHang khachHang, User user);
+        Task<bool> ChangePassword(int idUser, ChangePasswordUserDto changePasswordUserDto);
     }
 }

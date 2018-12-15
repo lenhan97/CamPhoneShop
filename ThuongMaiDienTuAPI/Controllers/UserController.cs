@@ -101,5 +101,19 @@ namespace ThuongMaiDienTuAPI.Controllers
             return BadRequest();
         }
 
+        [Authorize]
+        [HttpPost]
+        [Route("changepass")]
+        public async Task<IActionResult> ChangePassword([FromBody] ChangePasswordUserDto changePasswordUserDto)
+        {
+            int idUser = User.GetIdUser();
+            bool result = await userService.ChangePassword(idUser, changePasswordUserDto);
+            if (result)
+            {
+                return Ok();
+            }
+            return BadRequest();
+        }
+
     }
 }

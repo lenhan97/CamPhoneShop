@@ -1,10 +1,10 @@
 ﻿using System;
-namespace ThuongMaiDienTuAPI.Dtos.Queries
+namespace ThuongMaiDienTuAPI.Dtos
 {
     public class DangKyDichVuDto
     {
-        public int IDSeller { get; set; }
+        //public int IDSeller { get; set; }
         public int IDGoiDichVu { get; set; }
-        public DateTime ThoiGianDangKy { get; set; }
+        //public DateTime ThoiGianDangKy { get; set; }
     }
 }

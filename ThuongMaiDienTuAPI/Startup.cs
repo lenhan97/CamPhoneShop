@@ -20,7 +20,8 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using System.IdentityModel.Tokens.Jwt;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
-
+using Hangfire;
+using Hangfire.SqlServer;
 namespace ThuongMaiDienTuAPI
 {
     public class Startup
@@ -71,7 +72,12 @@ namespace ThuongMaiDienTuAPI
                 });
             });
             //-------Connect database-------------
+            ConstantVariable.ConnectionString = Configuration.GetConnectionString("TMDTContext");
             services.AddDbContext<DataContext>(x => x.UseSqlServer(Configuration.GetConnectionString("TMDTContext")));
+            //-------Hangfire schedule task---------
+            services.AddHangfire(x => x.UseSqlServerStorage(Configuration.GetConnectionString("HangfireContext")));
+            
+
             //---------Mapping Interface and Service-----------
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<ISanPhamService, SanPhamService>();
@@ -85,6 +91,8 @@ namespace ThuongMaiDienTuAPI
             services.AddScoped<IHoaDonService, HoaDonService>();
             services.AddScoped<IPageService, PageService>();
             services.AddScoped<IThongBaoService, ThongBaoService>();
+            services.AddScoped<IGoiDichVuService, GoiDichVuService>();
+            services.AddScoped<IDangKyDichVuService, DangKyDichVuService>();
 
         }
 
@@ -103,6 +111,12 @@ namespace ThuongMaiDienTuAPI
             {
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "Contacts API V1");
             });
+            //-----Hangfire schedule task------
+            app.UseHangfireServer();
+            app.UseHangfireDashboard();
+            IScheduleTaskService scheduleTaskService = new ScheduleTaskService();
+            RecurringJob.AddOrUpdate(() => scheduleTaskService.DailyTask(), Cron.Daily);
+            RecurringJob.AddOrUpdate(() => scheduleTaskService.MonthlyTask(), Cron.Monthly);
             //------Authentication------------
             //!!! Important use Auth need before use Mvc. 
             app.UseAuthentication();

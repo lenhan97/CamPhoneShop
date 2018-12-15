@@ -8,6 +8,7 @@ namespace ThuongMaiDienTuAPI.Helpers
     public class DataContext : DbContext
     {
         public DataContext(DbContextOptions<DataContext> op) : base(op) { }
+        public DataContext() { }
         public virtual DbSet<User> User { get; set; }
         public virtual DbSet<Seller> Seller { get; set; }
         public virtual DbSet<KhachHang> KhachHang { get; set; }
@@ -45,6 +46,16 @@ namespace ThuongMaiDienTuAPI.Helpers
 
             builder.Entity<ChiTietKhuyenMai>().HasKey(x => new { x.IDKhuyenMai, x.IDSanPham });
             builder.Entity<ChiTietKhuyenMai>().HasOne<KhuyenMai>().WithMany(x => x.ChiTietKM).HasForeignKey(x => x.IDKhuyenMai);
+
+            builder.Entity<GoiDichVu>().HasOne<DangKyDichVu>().WithOne(x => x.GoiDichVu).HasForeignKey<DangKyDichVu>(x => x.IDGoiDichVu);
         }
+        protected override void OnConfiguring(DbContextOptionsBuilder opt)
+        {
+            if (!opt.IsConfigured)
+            {
+                opt.UseSqlServer(ConstantVariable.ConnectionString);
+            }
+        }
+
     }
 }

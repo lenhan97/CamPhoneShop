@@ -92,5 +92,17 @@ namespace ThuongMaiDienTuAPI.Services
             }
 
         }
+        public async Task<bool> ChangePassword(int idUser,ChangePasswordUserDto changePasswordUserDto)
+        {
+            User user = await Get(idUser);
+            changePasswordUserDto.CurrentPass = Encryptor.MD5Hash(changePasswordUserDto.CurrentPass);
+            if (user != null && user.Matkhau==changePasswordUserDto.CurrentPass)
+            {
+                user.Matkhau = Encryptor.MD5Hash(changePasswordUserDto.NewPass);
+                await db.SaveChangesAsync();
+                return true;
+            }
+            return false;
+        }
     }
 }

@@ -60,5 +60,17 @@ namespace ThuongMaiDienTuAPI.Controllers
             return Ok();
         }
 
+        [Authorize(Roles = "SELLER")]
+        [HttpPost]
+        [Route("update")]
+        public async Task<IActionResult> Update([FromBody]SellerUpdateDto seller)
+        {
+            int idSeller = User.GetIdSeller();
+            bool res = await sellerService.Update(idSeller, seller);
+            if (!res)
+                return BadRequest();
+            return Ok();
+        }
+
     }
 }
