@@ -1,15 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-
-using ThuongMaiDienTuAPI.Dtos.Queries;
-using ThuongMaiDienTuAPI.Interfaces;
-using ThuongMaiDienTuAPI.Entities;
-using ThuongMaiDienTuAPI.Helpers;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Storage;
 using ThuongMaiDienTuAPI.Dtos;
+using ThuongMaiDienTuAPI.Dtos.Queries;
+using ThuongMaiDienTuAPI.Entities;
+using ThuongMaiDienTuAPI.Helpers;
+using ThuongMaiDienTuAPI.Interfaces;
 
 namespace ThuongMaiDienTuAPI.Services
 {
@@ -38,7 +36,7 @@ namespace ThuongMaiDienTuAPI.Services
             User user = (await db.User.FindAsync(idUser));
             if (user.LoaiUser != ConstantVariable.UserPermission.SELLER)
                 return null;
-            return await db.Seller.FindAsync(user.IdSeller);
+            return await db.Seller.FindAsync(user.IDSeller);
         }
 
         public async Task<bool> Register(int idUser, Seller seller)
@@ -53,7 +51,7 @@ namespace ThuongMaiDienTuAPI.Services
                     seller.NgayDK = DateTime.Now;
                     await db.Seller.AddAsync(seller);
                     await db.SaveChangesAsync();
-                    user.IdSeller = seller.ID;
+                    user.IDSeller = seller.ID;
                     await db.SaveChangesAsync();
                     //-----------Send Mail-----------------
                     string code = StringExtensions.RandomString(30);
@@ -102,6 +100,10 @@ namespace ThuongMaiDienTuAPI.Services
 
         private IQueryable<Seller> Filtering(IQueryable<Seller> sellers,SellerQuery query)
         {
+            if(query.ID != null)
+            {
+                sellers = sellers.Where(x => x.ID == query.ID);
+            }
             if (query.TenSeller != null)
             {
                 sellers = from x in sellers
@@ -119,6 +121,14 @@ namespace ThuongMaiDienTuAPI.Services
                 sellers = from x in sellers
                           where x.Mail.Contains(query.Mail)
                           select x;
+            }
+            if (query.FromDanhGia != null)
+            {
+                sellers = sellers.Where(x => x.DanhGia >= query.FromDanhGia);
+            }
+            if (query.ToDanhGia != null)
+            {
+                sellers = sellers.Where(x => x.DanhGia <= query.ToDanhGia);
             }
             if (query.CheckMail != null)
             {

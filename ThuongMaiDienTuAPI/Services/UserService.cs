@@ -1,15 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using ThuongMaiDienTuAPI.Dtos;
-using ThuongMaiDienTuAPI.Entities;
-using ThuongMaiDienTuAPI.Interfaces;
-using ThuongMaiDienTuAPI.Helpers;
-using ThuongMaiDienTuAPI.Dtos.Queries;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Storage;
-using System.Diagnostics;
+using ThuongMaiDienTuAPI.Dtos;
+using ThuongMaiDienTuAPI.Dtos.Queries;
+using ThuongMaiDienTuAPI.Entities;
+using ThuongMaiDienTuAPI.Helpers;
+using ThuongMaiDienTuAPI.Interfaces;
 
 namespace ThuongMaiDienTuAPI.Services
 {
@@ -78,7 +76,7 @@ namespace ThuongMaiDienTuAPI.Services
                     await db.SaveChangesAsync();
                     user.TinhTrang = true;
                     user.LoaiUser = ConstantVariable.UserPermission.CUSTOMER;
-                    user.IdKhachHang = khachHang.ID;
+                    user.IDKhachHang = khachHang.ID;
                     await db.User.AddAsync(user);
                     await db.SaveChangesAsync();
                     transaction.Commit();

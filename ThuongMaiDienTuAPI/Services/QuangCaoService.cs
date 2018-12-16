@@ -19,7 +19,7 @@ namespace ThuongMaiDienTuAPI.Services
 
         public async Task<bool> Add(QuangCao quangcao)
         {
-            if(await db.QuangCao.Where(x=>x.NgayKetThuc >= quangcao.NgayBatDau || x.NgayBatDau <= quangcao.NgayKetThuc).AnyAsync())
+            if (await CheckDateDup(quangcao))
             {
                 return false;
             }
@@ -42,19 +42,44 @@ namespace ThuongMaiDienTuAPI.Services
             };
         }
 
-        public async Task<bool> Update(QuangCao quangcao)
+        public async Task<bool> Update(int id)
         {
-            if(!await db.QuangCao.Where(x=>x.ID == quangcao.ID).AnyAsync())
+            if (!await db.QuangCao.AnyAsync(x => x.ID == id))
             {
                 return false;
             }
 
             //db.QuangCao.Attach(quangcao);
             //db.Entry(quangcao).State = EntityState.Modified;
-            var QC = await db.QuangCao.FirstAsync(x => x.ID == quangcao.ID);
+            var QC = await db.QuangCao.FirstOrDefaultAsync(x => x.ID == id);
+            if (await CheckDateDup(QC) || await checkAdMiddle(id))
+            {
+                return false;
+            }
+
             QC.TinhTrang = QC.TinhTrang != true;
             await db.SaveChangesAsync();
             return true;
+        }
+
+        private async Task<bool> CheckDateDup(QuangCao quangcao)
+        {
+
+            if (await db.QuangCao.AnyAsync(x => (x.NgayBatDau <= quangcao.NgayBatDau && x.NgayKetThuc >= quangcao.NgayBatDau) ||
+            (x.NgayBatDau <= quangcao.NgayKetThuc && x.NgayKetThuc >= quangcao.NgayKetThuc)))
+            {
+                return true;
+            }
+            return false;
+        }
+
+        private async Task<bool> checkAdMiddle(int id)
+        {
+            if (await db.LoaiQuangCao.AnyAsync(x => x.ID == id && x.ViTri == ConstantVariable.AdvertisementPlacementStatus.MIDDLE))
+            {
+                return true;
+            }
+            return false;
         }
 
         private IQueryable<QuangCao> Filtering(IQueryable<QuangCao> quangcao, QuangCaoQuery query)

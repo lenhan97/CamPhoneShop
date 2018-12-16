@@ -24,7 +24,7 @@ namespace ThuongMaiDienTuAPI.Services
             //    Total = danhMucSP.Count(),
             //    Content = await Paging<DanhMucSP>.Get(danhMucSP, query).ToListAsync()
             //};
-            var danhmuc = await Sorting<DanhMucSP>.Get(Filtering(db.DanhMucSP, query),query).ToListAsync();
+            var danhmuc = await Filtering(db.DanhMucSP, query).ToListAsync();
             return new GetResult(danhmuc.Count(), danhmuc);
         }
         private IQueryable<DanhMucSP> Filtering(IQueryable<DanhMucSP> danhMucSP,DanhMucSPQuery query)

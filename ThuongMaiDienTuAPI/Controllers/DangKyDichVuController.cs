@@ -36,7 +36,7 @@ namespace ThuongMaiDienTuAPI.Controllers
         [Route("getbyseller")]
         public async Task<IActionResult> GetBySeller([FromQuery] DangKyDichVuQuery query)
         {
-            query.IdSeller = User.GetIdSeller();
+            query.IDSeller = User.GetIdSeller();
             return Ok(await dangKyDichVuService.Get(query));
         }
 

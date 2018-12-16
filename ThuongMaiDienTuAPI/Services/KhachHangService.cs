@@ -1,13 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 using System.Threading.Tasks;
-
+using Microsoft.EntityFrameworkCore;
 using ThuongMaiDienTuAPI.Dtos.Queries;
-using ThuongMaiDienTuAPI.Interfaces;
 using ThuongMaiDienTuAPI.Entities;
 using ThuongMaiDienTuAPI.Helpers;
-using Microsoft.EntityFrameworkCore;
+using ThuongMaiDienTuAPI.Interfaces;
 namespace ThuongMaiDienTuAPI.Services
 {
     public class KhachHangService : IKhachHangService
@@ -46,14 +43,6 @@ namespace ThuongMaiDienTuAPI.Services
                      where x.Mail.Contains(query.Mail)
                      select x;
             }
-            if (query.FromDanhGia != null)
-            {
-                kh = kh.Where(x => x.DanhGia >= query.FromDanhGia);
-            }
-            if (query.ToDanhGia != null)
-            {
-                kh = kh.Where(x => x.DanhGia <= query.ToDanhGia);
-            }
             if (query.FromDiem != null)
             {
                 kh = kh.Where(x => x.Diem >= query.FromDiem);
@@ -67,8 +56,20 @@ namespace ThuongMaiDienTuAPI.Services
 
         public async Task<KhachHang> GetByIdUser(int idUser)
         {
-            int idKhachHang = (await db.User.FindAsync(idUser)).IdKhachHang;
+            int idKhachHang = (await db.User.FindAsync(idUser)).IDKhachHang;
             return await db.KhachHang.FindAsync(idKhachHang);
+        }
+
+        public async Task<bool> Update(KhachHang khachHang)
+        {
+            if (!db.KhachHang.Any(x => x.ID == khachHang.ID))
+            {
+                return false;
+            }
+            db.KhachHang.Attach(khachHang);
+            db.Entry(khachHang).State = EntityState.Modified;
+            await db.SaveChangesAsync();
+            return true;
         }
     }
 }

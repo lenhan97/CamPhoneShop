@@ -9,6 +9,10 @@ namespace ThuongMaiDienTuAPI.Dtos.Queries
         public string TenSeller { get; set; } = null;
         public bool? CheckMail { get; set; } = null;
         public bool? CheckCMND { get; set; } = null;
+        public int? ID { get; set; } = null;
+        public int? FromDanhGia { get; set; } = null;
+        public int? ToDanhGia { get; set; } = null;
+
 
         public int PageSize { get; set; } = 20;
         public int Page { get; set; } = 1;

@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 using ThuongMaiDienTuAPI.Dtos.Queries;
 using ThuongMaiDienTuAPI.Entities;
 using ThuongMaiDienTuAPI.Helpers;
 using ThuongMaiDienTuAPI.Interfaces;
-using Microsoft.EntityFrameworkCore;
 namespace ThuongMaiDienTuAPI.Services
 {
     public class GoiDichVuService : IGoiDichVuService
@@ -34,9 +32,9 @@ namespace ThuongMaiDienTuAPI.Services
         }
         private IQueryable<GoiDichVu> Filtering(IQueryable<GoiDichVu> goiDichVu, GoiDichVuQuery query)
         {
-            if (query.Id != null)
+            if (query.ID != null)
             {
-                goiDichVu = goiDichVu.Where(x => x.ID == query.Id);
+                goiDichVu = goiDichVu.Where(x => x.ID == query.ID);
             }
             if (query.Ten != null)
             {

@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 using ThuongMaiDienTuAPI.Dtos.Queries;
 using ThuongMaiDienTuAPI.Entities;
 using ThuongMaiDienTuAPI.Helpers;
 using ThuongMaiDienTuAPI.Interfaces;
-using Microsoft.EntityFrameworkCore;
 namespace ThuongMaiDienTuAPI.Services
 {
     public class DangKyDichVuService : IDangKyDichVuService
@@ -44,17 +42,17 @@ namespace ThuongMaiDienTuAPI.Services
         }
         private IQueryable<DangKyDichVu> Filtering(IQueryable<DangKyDichVu> dangKyDichVu, DangKyDichVuQuery query)
         {
-            if (query.Id != null)
+            if (query.ID != null)
             {
-                dangKyDichVu = dangKyDichVu.Where(x => x.ID == query.Id);
+                dangKyDichVu = dangKyDichVu.Where(x => x.ID == query.ID);
             }
-            if (query.IdSeller != null)
+            if (query.IDSeller != null)
             {
-                dangKyDichVu = dangKyDichVu.Where(x => x.IDSeller == query.IdSeller);
+                dangKyDichVu = dangKyDichVu.Where(x => x.IDSeller == query.IDSeller);
             }
-            if (query.IdGoiDichVu != null)
+            if (query.IDGoiDichVu != null)
             {
-                dangKyDichVu = dangKyDichVu.Where(x => x.IDGoiDichVu == query.IdGoiDichVu);
+                dangKyDichVu = dangKyDichVu.Where(x => x.IDGoiDichVu == query.IDGoiDichVu);
             }
 
             return dangKyDichVu;

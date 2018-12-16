@@ -1,30 +1,25 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+﻿using System.Threading.Tasks;
 using AutoMapper;
-using Microsoft.AspNetCore.Authorization;
-using ThuongMaiDienTuAPI.Interfaces;
-using ThuongMaiDienTuAPI.Dtos;
+using Microsoft.AspNetCore.Mvc;
 using ThuongMaiDienTuAPI.Dtos.Queries;
+using ThuongMaiDienTuAPI.Interfaces;
 namespace ThuongMaiDienTuAPI.Controllers
 {
     [Route("api/[controller]")]
     public class PageController : Controller
     {
-        private IPageService pageService;
-        private IMapper mapper;
-        public PageController(IPageService pageService, IMapper mapper)
+        private IPageService _pageService;
+        private IMapper _mapper;
+        public PageController(IPageService _pageService, IMapper _mapper)
         {
-            this.pageService = pageService;
-            this.mapper = mapper;
+            this._pageService = _pageService;
+            this._mapper = _mapper;
         }
         [HttpGet]
         [Route("get")]
         public async Task<IActionResult> Get([FromQuery] PageQuery query)
         {
-            return Ok(await pageService.Get(query));
+            return Ok(await _pageService.Get(query));
         }
     }
 }

@@ -30,11 +30,11 @@ namespace ThuongMaiDienTuAPI.Controllers
         }
 
         [AllowAnonymous]
-        [HttpGet("{id}")]
-        [Route("getbyiduser")]
-        public async Task<IActionResult> GetByIdUser(int idUser)
+        [HttpGet]
+        [Route("getbyiduser/{id:int}")]
+        public async Task<IActionResult> GetByIdUser(int id)
         {
-            return Ok(await sellerService.GetByIdUser(idUser));
+            return Ok(await sellerService.GetByIdUser(id));
         }
 
         [Authorize(Roles = "CUSTOMER")]

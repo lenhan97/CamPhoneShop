@@ -13,7 +13,7 @@ namespace ThuongMaiDienTuAPI.Entities
         {
             Ngay = hoaDon.Ngay;
             TrangThai = hoaDon.TrangThai;
-            IDUser = hoaDon.IDUser;
+            IDKhachHang = hoaDon.IDKhachHang;
             DiaChiKH = hoaDon.DiaChiKH;
             GhiChu = hoaDon.GhiChu;
             TenKH = hoaDon.TenKH;
@@ -30,7 +30,7 @@ namespace ThuongMaiDienTuAPI.Entities
         public double TongTien { get; set; }
         public bool TrangThai { get; set; }
 
-        public int IDUser { get; set; }
+        public int IDKhachHang { get; set; }
 
         public string DiaChiKH { get; set; }
         [MaxLength(500)]

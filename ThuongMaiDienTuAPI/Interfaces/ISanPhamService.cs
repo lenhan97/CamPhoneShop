@@ -14,5 +14,6 @@ namespace ThuongMaiDienTuAPI.Interfaces
         Task<object> GetTopSearch();
         Task<object> GetTopBought();
         Task<object> GetById(int ID);
+        Task<bool> Update(int idSeller, SanPham sanpham);
     }
 }

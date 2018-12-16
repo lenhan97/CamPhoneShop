@@ -1,14 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using ThuongMaiDienTuAPI.Interfaces;
+﻿using ThuongMaiDienTuAPI.Interfaces;
 
 namespace ThuongMaiDienTuAPI.Dtos.Queries
 {
     public class GoiDichVuQuery:IPaging,ISorting
     {
-        public int? Id { get; set; } = null;
+        public int? ID { get; set; } = null;
         public string Ten { get; set; } = null;
         public bool? TinhTrang { get; set; } = null;
 

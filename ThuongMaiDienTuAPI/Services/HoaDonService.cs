@@ -17,9 +17,9 @@ namespace ThuongMaiDienTuAPI.Services
             this.db = db;
         }
 
-        public async Task<object> GetByCustomer(int idUser,HoaDonQuery query)
+        public async Task<object> GetByCustomer(int IDKhachHang,HoaDonQuery query)
         {
-            var hoaDon = Sorting<HoaDon>.Get(Filtering(db.HoaDon.Where(x=>x.IDUser==idUser), query), query);
+            var hoaDon = Sorting<HoaDon>.Get(Filtering(db.HoaDon.Where(x=>x.IDKhachHang== IDKhachHang), query), query);
             return new {
                 Total = hoaDon.Count(),
                 Content= await Paging<HoaDon>.Get(hoaDon,query).Include(x=>x.ChiTietHD).ToListAsync()
@@ -33,9 +33,9 @@ namespace ThuongMaiDienTuAPI.Services
         {
             return await hoaDon.Select(x => new
             {
-                IdHoaDon = x.ID,
-                IdSeller = x.IDSeller,
-                IdUser = x.IDUser,
+                ID = x.ID,
+                IDSeller = x.IDSeller,
+                IDKhachHang = x.IDKhachHang,
                 TenKH = x.TenKH,
                 DiaChiKH = x.DiaChiKH,
                 GhiChu = x.GhiChu,
@@ -48,8 +48,8 @@ namespace ThuongMaiDienTuAPI.Services
                 TrangThai = x.TrangThai,
                 ChiTietHD = x.ChiTietHD.Select(y => new
                 {
-                    IdHoaDon = y.IDHoaDon,
-                    IdPhanLoaiSP = y.IDPhanLoaiSP,
+                    IDHoaDon = y.IDHoaDon,
+                    IDPhanLoaiSP = y.IDPhanLoaiSP,
                     Gia = y.Gia,
                     GiaKM = y.GiaKM,
                     GiaGoc = GetGiaGoc(y.IDPhanLoaiSP),
@@ -70,13 +70,13 @@ namespace ThuongMaiDienTuAPI.Services
 
         private IQueryable<HoaDon> Filtering(IQueryable<HoaDon> hoaDon, HoaDonQuery query)
         {
-            if (query.IdUser != null)
+            if (query.IDUser != null)
             {
-                hoaDon = hoaDon.Where(x => x.ID == query.IdUser);
+                hoaDon = hoaDon.Where(x => x.ID == query.IDUser);
             }
-            if (query.IdSeller != null)
+            if (query.IDSeller != null)
             {
-                hoaDon = hoaDon.Where(x => x.IDSeller == query.IdSeller);
+                hoaDon = hoaDon.Where(x => x.IDSeller == query.IDSeller);
             }
             if (query.TenKH != null)
             {
@@ -112,6 +112,14 @@ namespace ThuongMaiDienTuAPI.Services
             {
                 hoaDon = hoaDon.Where(x => x.TrangThai == query.TrangThai);
             }
+            if (query.FromDate != null)
+            {
+                hoaDon = hoaDon.Where(x => x.Ngay >= query.FromDate);
+            }
+            if (query.ToDate != null)
+            {
+                hoaDon = hoaDon.Where(x => x.Ngay <= query.ToDate);
+            }
 
             return hoaDon;
         }
@@ -120,12 +128,12 @@ namespace ThuongMaiDienTuAPI.Services
             int idSanPham = db.PhanLoaiSP.Find(IdPhanLoaiSP).IDSanPham;
             return db.SanPham.Find(idSanPham).IDSeller;
         }
-        public async Task<object> Add(int idUser, HoaDon hoaDon)
+        public async Task<object> Add(int IDKhachHang, HoaDon hoaDon)
         {
             hoaDon.Ngay = DateTime.Now;
             hoaDon.TrangThai = true;
             hoaDon.TinhTrangTT = ConstantVariable.PaymentStatus.WAIT;
-            hoaDon.IDUser = idUser;
+            hoaDon.IDKhachHang = IDKhachHang;
             Dictionary<int, HoaDon> dictionary = new Dictionary<int, HoaDon>();
             int idSeller;
             PhanLoaiSP phanLoaiSP;
@@ -160,7 +168,7 @@ namespace ThuongMaiDienTuAPI.Services
                     phanLoaiSP.SoLuong-=(int)j.SoLuong;
                     if (phanLoaiSP.SoLuong == 0)
                     {
-                        int idUserSeller = (await db.User.Where(x => x.IdSeller == i.Value.IDSeller).FirstOrDefaultAsync()).ID;
+                        int idUserSeller = (await db.User.Where(x => x.IDSeller == i.Value.IDSeller).FirstOrDefaultAsync()).ID;
                         listThongBao.Add(new KeyValuePair<int, int>(idUserSeller,j.IDPhanLoaiSP));
                     }
                 }
@@ -178,6 +186,19 @@ namespace ThuongMaiDienTuAPI.Services
                 Total = list.Count(),
                 Content = list
             };
+        }
+
+        public async Task<bool> Update(int idSeller, int idHoadon, string paymentStatus)
+        {
+            var hoadon = await db.HoaDon.FirstOrDefaultAsync(x => x.ID == idHoadon && x.IDSeller == idSeller);
+            if (hoadon == null) return false;
+            if(paymentStatus.Equals(ConstantVariable.PaymentStatus.COMPLETED))
+            {
+                hoadon.TrangThai = true;
+            }
+            hoadon.TinhTrangTT = paymentStatus;
+            await db.SaveChangesAsync();
+            return true;
         }
     }
 }

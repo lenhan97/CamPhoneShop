@@ -5,7 +5,7 @@ namespace ThuongMaiDienTuAPI.Dtos.Queries
     {
         public double? FromDanhGia { get; set; } = null;
         public double? ToDanhGia { get; set; } = null;
-        public int? IdSeller { get; set; } = null;
+        public int? IDSeller { get; set; } = null;
 
         public int PageSize { get; set; } = 20;
         public int Page { get; set; } = 1;

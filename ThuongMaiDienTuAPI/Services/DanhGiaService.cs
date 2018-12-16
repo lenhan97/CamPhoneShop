@@ -16,16 +16,16 @@ namespace ThuongMaiDienTuAPI.Services
             this.db = db;
         }
 
-        public async Task<bool> Add(int idUser,DanhGia danhGia)
+        public async Task<bool> Add(int IDKhachHang,DanhGia danhGia)
         {
             bool isHad = db.HoaDon.Where(
-                x => x.IDUser == idUser &&
+                x => x.IDKhachHang == IDKhachHang &&
                 x.TinhTrangTT == ConstantVariable.PaymentStatus.COMPLETED &&
                 x.TrangThai == true).Any();
             if (!isHad)
                 return false;
             danhGia.Ngay = DateTime.Now;
-            danhGia.IDUser = idUser;
+            danhGia.IDUser = IDKhachHang;
             await db.DanhGia.AddAsync(danhGia);
             await db.SaveChangesAsync();
             return true;
@@ -43,9 +43,9 @@ namespace ThuongMaiDienTuAPI.Services
 
         private IQueryable<DanhGia> Filtering(IQueryable<DanhGia> danhGia,DanhGiaQuery query)
         {
-            if(query.IdSeller != -1)
+            if(query.IDSeller != -1)
             {
-                danhGia = danhGia.Where(x => x.IDSeller == query.IdSeller);
+                danhGia = danhGia.Where(x => x.IDSeller == query.IDSeller);
                 if (query.FromDanhGia != null)
                 {
                     danhGia = danhGia.Where(x => x.Danhgia >= query.FromDanhGia);

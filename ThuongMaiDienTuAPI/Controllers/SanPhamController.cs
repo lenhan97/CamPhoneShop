@@ -42,11 +42,13 @@ namespace ThuongMaiDienTuAPI.Controllers
 
         [HttpPost]
         [Route("add")]
+        //[AllowAnonymous]
         [Authorize(Roles = "SELLER")]
         public async Task<IActionResult> Add([FromBody]SanPhamDto sanPhamDto)
         {
             int idSeller = User.GetIdSeller();
-            if(await sanPhamService.Add(idSeller, mapper.Map<SanPham>(sanPhamDto)))
+            SanPham sanPham = mapper.Map<SanPham>(sanPhamDto);
+            if (await sanPhamService.Add(idSeller, sanPham))
             {
                 return Ok();
             }

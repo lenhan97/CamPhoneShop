@@ -16,7 +16,6 @@ namespace ThuongMaiDienTuAPI.Entities
         [MaxLength(128)]
         [EmailAddress]
         public string Mail { get; set; }
-        public double DanhGia { get; set; }
         public int Diem { get; set; }
 
         public DiaChi DiaChi { get; set; }

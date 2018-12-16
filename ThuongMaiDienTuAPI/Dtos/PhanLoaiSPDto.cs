@@ -3,10 +3,10 @@
     public class PhanLoaiSPDto
     {
         public int SoLuong { get; set; }
-        public int? GiaKM { get; set; }
-        public int GiaBan { get; set; }
-        public int GiaGoc { get; set; }
+        public double? GiaKM { get; set; }
+        public double GiaBan { get; set; }
+        public double GiaGoc { get; set; }
         public string Mau { get; set; }
-        public int IdKhuyenMai { get; set; }
+        public int SLMua { get; set; } = 0;
     }
 }

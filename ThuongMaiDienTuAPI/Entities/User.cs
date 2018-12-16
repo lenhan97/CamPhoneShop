@@ -13,7 +13,7 @@ namespace ThuongMaiDienTuAPI.Entities
         [MaxLength(50)]
         public string LoaiUser { get; set; }
 
-        public int IdKhachHang { get; set; }
-        public int? IdSeller { get; set; }
+        public int IDKhachHang { get; set; }
+        public int? IDSeller { get; set; }
     }
 }

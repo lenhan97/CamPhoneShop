@@ -14,6 +14,7 @@ namespace ThuongMaiDienTuAPI.Dtos.Queries
         public int? FromSoLuong { get; set; } = null;
         public int? ToSoLuong { get; set; } = null;
         public int? IDDanhMuc { get; set; } = null;
+        public string Mau { get; set; } = null;
 
         public string SortBy { get; set; } = "SLXem";
         public string Order { get; set; } = "desc";

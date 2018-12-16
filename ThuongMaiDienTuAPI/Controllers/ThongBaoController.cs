@@ -1,14 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+﻿using System.Threading.Tasks;
 using AutoMapper;
 using Microsoft.AspNetCore.Authorization;
-using ThuongMaiDienTuAPI.Interfaces;
-using ThuongMaiDienTuAPI.Dtos;
+using Microsoft.AspNetCore.Mvc;
 using ThuongMaiDienTuAPI.Dtos.Queries;
 using ThuongMaiDienTuAPI.Helpers;
+using ThuongMaiDienTuAPI.Interfaces;
 namespace ThuongMaiDienTuAPI.Controllers
 {
     [Authorize]

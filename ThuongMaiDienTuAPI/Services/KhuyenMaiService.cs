@@ -38,9 +38,9 @@ namespace ThuongMaiDienTuAPI.Services
         private IQueryable<KhuyenMai> Filtering(IQueryable<KhuyenMai> khuyenMais,KhuyenMaiQuery query)
         {
 
-            if(query.IdNguoiTao != -1)
+            if(query.IDNguoiTao != -1)
             {
-                khuyenMais = khuyenMais.Where(x => x.IDNguoiTao == query.IdNguoiTao);
+                khuyenMais = khuyenMais.Where(x => x.IDNguoiTao == query.IDNguoiTao);
                 if(query.NgayKetThuc != null)
                 {
                     khuyenMais = khuyenMais.Where(x => x.NgayKetThuc <= query.NgayKetThuc);
@@ -72,9 +72,9 @@ namespace ThuongMaiDienTuAPI.Services
         {
             return await khuyenMais.Select(x => new
             {
-                Id = x.ID,
+                ID = x.ID,
                 Ten = x.Ten,
-                IdNguoiTao = x.IDNguoiTao,
+                IDNguoiTao = x.IDNguoiTao,
                 PhamTramKM = x.PhamTramKM,
                 NgayBatDau = x.NgayBatDau,
                 NgayKetThuc = x.NgayKetThuc,
@@ -82,7 +82,7 @@ namespace ThuongMaiDienTuAPI.Services
                 LoaiKhuyenMai = x.LoaiKhuyenMai,
                 ChiTietKM = db.ChiTietKhuyenMai.Select(y => new
                 {
-                    IdKhuyenMai = y.IDKhuyenMai,
+                    IDKhuyenMai = y.IDKhuyenMai,
                     IDSanPham = y.IDSanPham
                 })
             }).ToListAsync();

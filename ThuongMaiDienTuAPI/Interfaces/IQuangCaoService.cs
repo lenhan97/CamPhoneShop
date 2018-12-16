@@ -8,6 +8,6 @@ namespace ThuongMaiDienTuAPI.Interfaces
     {
         Task<object> Get(QuangCaoQuery query);
         Task<bool> Add(QuangCao quangcao);
-        Task<bool> Update(QuangCao quangcao);
+        Task<bool> Update(int id);
     }
 }

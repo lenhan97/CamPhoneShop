@@ -5,7 +5,7 @@ namespace ThuongMaiDienTuAPI.Dtos.Queries
 {
     public class KhuyenMaiQuery : IPaging, ISorting
     {
-        public int? IdNguoiTao { get; set; } = null;
+        public int? IDNguoiTao { get; set; } = null;
         public DateTime? NgayKetThuc { get; set; } = null;
         public DateTime? NgayBatDau { get; set; } = null;
 

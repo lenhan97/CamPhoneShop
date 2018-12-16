@@ -21,6 +21,8 @@ namespace ThuongMaiDienTuAPI.Entities
         public string SDT { get; set; }
         public DateTime ThoiGianHetHan { get; set; }
 
+        public double DanhGia { get; set; }
+
         public DiaChi DiaChi { get; set; }
         public bool TinhTrang { get; set; }
     }

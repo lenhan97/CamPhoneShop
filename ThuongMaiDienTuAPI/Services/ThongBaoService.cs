@@ -1,13 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-
+using Microsoft.EntityFrameworkCore;
 using ThuongMaiDienTuAPI.Dtos.Queries;
-using ThuongMaiDienTuAPI.Interfaces;
 using ThuongMaiDienTuAPI.Entities;
 using ThuongMaiDienTuAPI.Helpers;
-using Microsoft.EntityFrameworkCore;
+using ThuongMaiDienTuAPI.Interfaces;
 namespace ThuongMaiDienTuAPI.Services
 {
     public class ThongBaoService : IThongBaoService

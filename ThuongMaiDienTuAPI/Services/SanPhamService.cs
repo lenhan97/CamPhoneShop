@@ -20,7 +20,7 @@ namespace ThuongMaiDienTuAPI.Services
 
         #region Events
 
-        public async Task<bool> Add(int idSeller,SanPham sanPham)
+        public async Task<bool> Add(int idSeller, SanPham sanPham)
         {
 
             using (IDbContextTransaction transaction = db.Database.BeginTransaction())
@@ -46,7 +46,7 @@ namespace ThuongMaiDienTuAPI.Services
             }
         }
 
-        public async Task<bool> Block(int idSeller,int idSanPham)
+        public async Task<bool> Block(int idSeller, int idSanPham)
         {
             SanPham sanPham = await db.SanPham.FindAsync(idSanPham);
             if (sanPham == null || sanPham.IDSeller != idSeller)
@@ -56,7 +56,7 @@ namespace ThuongMaiDienTuAPI.Services
             return false;
         }
 
-        public async Task<bool> Delete(int idSeller,int idSanPham)
+        public async Task<bool> Delete(int idSeller, int idSanPham)
         {
             SanPham sanPham = await db.SanPham.Where(x => x.ID == idSanPham).Include(x => x.PhanLoaiSP).FirstOrDefaultAsync();
             if (sanPham == null || sanPham.IDSeller != idSeller)
@@ -79,8 +79,8 @@ namespace ThuongMaiDienTuAPI.Services
 
         public async Task<object> GetById(int ID)
         {
-            var sanpham = await db.SanPham.Where(x=>x.ID == ID).Include(x=>x.PhanLoaiSP).Include(x=>x.CauHinh).ToListAsync();
-            if(sanpham != null)
+            var sanpham = await db.SanPham.Where(x => x.ID == ID).Include(x => x.PhanLoaiSP).Include(x => x.CauHinh).ToListAsync();
+            if (sanpham != null)
             {
                 return new GetResult(sanpham.Count, sanpham);
                 //return new
@@ -94,7 +94,7 @@ namespace ThuongMaiDienTuAPI.Services
 
         public async Task<object> Get(int idSeller, SanPhamQuery query)
         {
-            var sanpham = Sorting<SanPham>.Get(Filtering(db.SanPham.Where(x=>x.IDSeller==idSeller), query), query);
+            var sanpham = Sorting<SanPham>.Get(Filtering(db.SanPham.Where(x => x.IDSeller == idSeller), query), query);
             return new GetResult(sanpham.Count(), await Paging<SanPham>.Get(sanpham, query).Include(x => x.CauHinh).Include(x => x.PhanLoaiSP).ToListAsync());
             //return new
             //{
@@ -114,7 +114,7 @@ namespace ThuongMaiDienTuAPI.Services
             //};
         }
 
-        private IQueryable<SanPham> Filtering(IQueryable<SanPham> sp,SanPhamQuery query)
+        private IQueryable<SanPham> Filtering(IQueryable<SanPham> sp, SanPhamQuery query)
         {
 
             if (query.IDSeller != null)
@@ -151,12 +151,16 @@ namespace ThuongMaiDienTuAPI.Services
             {
                 sp = sp.Where(x => x.PhanLoaiSP.Any(y => y.SoLuong <= query.ToSoLuong));
             }
+            if (query.Mau != null)
+            {
+                sp = sp.Where(x => x.PhanLoaiSP.Any(y => y.Mau == query.Mau));
+            }
             return sp;
         }
 
         public async Task<object> GetTopSearch()
         {
-            var sanpham = await Sorting<SanPham>.Get(db.SanPham, new SanPhamQuery()).Include(x=>x.CauHinh).Include(x=>x.PhanLoaiSP).Take(ConstantVariable.ProductStatus.TOPSEARCH).ToListAsync();
+            var sanpham = await Sorting<SanPham>.Get(db.SanPham, new SanPhamQuery()).Include(x => x.CauHinh).Include(x => x.PhanLoaiSP).Take(ConstantVariable.ProductStatus.TOPSEARCH).ToListAsync();
             return new GetResult(sanpham.Count(), sanpham);
             //return new
             //{
@@ -178,7 +182,7 @@ namespace ThuongMaiDienTuAPI.Services
         private async Task<object> GetTopBought(IQueryable<SanPham> sanPhams)
         {
             var phanloaisp = await Sorting<PhanLoaiSP>.Get(db.PhanLoaiSP, new PhanLoaiSPQuery()).Take(ConstantVariable.ProductStatus.TOPHOT).ToListAsync();
-            return await sanPhams.Where(x=>phanloaisp.Any(y=>y.IDSanPham == x.ID)).Select(x => new
+            return await sanPhams.Where(x => phanloaisp.Any(y => y.IDSanPham == x.ID)).Select(x => new
             {
                 ID = x.ID,
                 IDCauHinh = x.IDCauHinh,
@@ -193,7 +197,7 @@ namespace ThuongMaiDienTuAPI.Services
                 Hinh = x.Hinh,
                 HinhCT = x.HinhCT,
                 TinhTrangHang = x.TinhTrangHang,
-                CauHinh = db.CauHinh.Where(y=> x.IDCauHinh == y.ID).Select(y => new
+                CauHinh = db.CauHinh.Where(y => x.IDCauHinh == y.ID).Select(y => new
                 {
                     ThuongHieu = y.ThuongHieu,
                     BoNho = y.BoNho,
@@ -209,10 +213,10 @@ namespace ThuongMaiDienTuAPI.Services
                     Bluetooth = y.Bluetooth,
                     Pin = y.Pin
                 }),
-                PhanLoaiSP = phanloaisp.Where(z=>z.IDSanPham == x.ID).Select(z => new
+                PhanLoaiSP = phanloaisp.Where(z => z.IDSanPham == x.ID).Select(z => new
                 {
                     ID = z.ID,
-                    IdSanPham = z.IDSanPham,
+                    IDSanPham = z.IDSanPham,
                     SoLuong = z.SoLuong,
                     GiaKM = z.GiaKM,
                     GiaBan = z.GiaBan,
@@ -220,6 +224,18 @@ namespace ThuongMaiDienTuAPI.Services
                     SLMua = z.SLMua
                 })
             }).ToListAsync();
+        }
+
+        public async Task<bool> Update(int idSeller, SanPham sanpham)
+        {
+            if (!await db.SanPham.AnyAsync(x => x.ID == sanpham.ID && x.IDSeller == idSeller))
+            {
+                return false;
+            }
+            db.SanPham.Attach(sanpham);
+            db.Entry(sanpham).State = EntityState.Modified;
+            await db.SaveChangesAsync();
+            return true;
         }
         #endregion
     }
