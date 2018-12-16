@@ -32,8 +32,8 @@
         }
         public static class ProductStatus
         {
-            public static int TOPSEARCH = 2;
-            public static int TOPHOT = 1;
+            public static int TOPSEARCH = 3;
+            public static int TOPHOT = 3;
         }
         public static class AdvertisementPlacementStatus
         {

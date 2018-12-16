@@ -63,15 +63,26 @@
                 <i class="icon-star filled"></i>
             </div>
             <span class="text-muted align-middle">&nbsp;&nbsp;5 | 13 Đánh giá</span>
-            <h2 class="padding-top-1x text-normal with-side">iPhone X Gold 128GB</h2>
-            <span class="h2 d-block with-side"><del class="text-muted text-normal">$899.00</del>&nbsp; $749.60</span>
+            <h2 class="padding-top-1x text-normal with-side">@Model.SanPham.Ten</h2>
+            <span class="h2 d-block with-side">
+                @if (Model.SanPham.PhanLoaiSP[0].GiaKM != 0)
+                {
+                    <del class="text-muted text-normal">@Model.SanPham.PhanLoaiSP[0].GiaBan</del> @Model.SanPham.PhanLoaiSP[0].GiaGoc
+                }
+                else
+                {
+                    @Model.SanPham.PhanLoaiSP[0].GiaBan
+                }
+                VNĐ
+            </span>
             <div class="row margin-top-1x">
                 <div class="col-sm-12">
                     <div class="form-group">
                         <label for="color">Màu sắc:&nbsp;</label>
-                        <button class="btn btn-square btn-secondary-2" type="button">Trắng</button>
-                        <button class="btn btn-square btn-secondary-2" type="button">Đen</button>
-                        <button class="btn btn-square btn-secondary-2" type="button">Đỏ</button>
+                        @foreach (PhanLoaiSP i in Model.SanPham.PhanLoaiSP)
+                        {
+                            <button class="btn btn-square btn-secondary-2" type="button">@i.Mau</button>
+                        }
                     </div>
                 </div>
             </div>
@@ -87,10 +98,12 @@
                     </div>
                 </div>
             </div>
-            <div class="pt-1 mb-2"><span class="text-medium">SKU:</span> #17685932</div>
+            <div class="pt-1 mb-2"><span class="text-medium">Tình trạng hàng: </span> @if (Model.SanPham.TinhTrangHang)
+            {<p>Còn Hàng</p>}
+            else
+            {<p>Hết Hàng</p>}</div>
             <div class="padding-bottom-1x mb-2">
-                <span class="text-medium">Hãng:&nbsp;</span>
-                <a class="navi-link" href="#">Apple</a>
+                <span class="text-medium">Bảo hành:&nbsp;</span>@Model.SanPham.ThoiGianBH
             </div>
             <div class="col-sm-12">
                 <div class="sp-buttons mt-2 mb-2">
@@ -116,8 +129,6 @@
                             <a class="social-button shape-circle sb-google-plus" href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Google +">
                                 <i class="socicon-googleplus"></i>
                             </a>
-                            <a class="social-button soc-border"><button class="btn btn-outline-secondary btn-sm btn-wishlist" data-toggle="tooltip" title="" data-original-title="Whishlist"><i class="icon-heart"></i></button></a>
-
                         </div>
                     </div>
                 </div>
@@ -133,8 +144,7 @@
                 <div class="d-table">
                     <img class="d-block w-150 mx-auto img-thumbnail rounded-circle d-table-cell align-middle" src="/assets/images/team/03.jpg" alt="Team">
                     <div class="pl-3 d-table-cell align-middle">
-                        <h6>Tony Stark</h6>
-                        <p class="text-muted mb-2">Lead Engeneer</p>
+                        <h6>@Model.Seller.content[0].Ten</h6>
                     </div>
                 </div>
             </div>
@@ -148,13 +158,13 @@
                         <i class="icon-star filled"></i>
                         <i class="icon-star filled"></i>
                     </li>
-                    <li>Ngày tham gia: 17/11/2018</li>
+                    <li>Ngày tham gia: @Model.Seller.content[0].NgayDK.ToShortDateString()</li>
                 </ul>
             </div>
             <div class="col-sm-3">
                 <ul class="list-icon">
-                    <li> <i class="fa fa-envelope-o"></i><a class="navi-link" href="#"> support@Inspina.com</a></li>
-                    <li> <i class="fa fa-phone"></i> +1 888 888 8888</li>
+                    <li> <i class="fa fa-envelope-o"></i><a class="navi-link" href="#"> @Model.Seller.content[0].Mail</a></li>
+                    <li> <i class="fa fa-phone"></i> @Model.Seller.content[0].SDT</li>
                 </ul>
             </div>
         </div>
@@ -170,8 +180,125 @@
             </div>
         </div>
         <div class="tab-pane fade show active" id="detial" role="tabpanel">
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
-            <p class="mb-30">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+            <div class="col-md-12">
+                <div class="information">
+                    <br>
+                    <h4>
+                        Cấu hình:
+                    </h4>
+                    <br>
+
+                    <div id="productConfig">
+                        <div class="form-group row ">
+                            <label class="col-md-2">
+                                Thương hiệu
+                            </label>
+                            <div class="col-md-10">
+                                <p>@Model.SanPham.CauHinh.ThuongHieu</p>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label class="col-md-2">
+                                Bộ nhớ
+                            </label>
+                            <div class="col-md-10">
+                                <p>@Model.SanPham.CauHinh.BoNho</p>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label class="col-md-2">
+                                Mạng
+                            </label>
+                            <div class="col-md-10">
+                                <p>@Model.SanPham.CauHinh.Mang</p>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label class="col-md-2">
+                                SIM
+                            </label>
+                            <div class="col-md-10">
+                                <p>@Model.SanPham.CauHinh.Sim</p>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label class="col-md-2">
+                                Chống thấm nước
+                            </label>
+                            <div class="col-md-10">
+                                <p>@Model.SanPham.CauHinh.ChongThamNuoc</p>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label class="col-md-2">
+                                Màn hình
+                            </label>
+                            <div class="col-md-10">
+                                <p>@Model.SanPham.CauHinh.KTManHinh</p>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label class="col-md-2">
+                                Hệ điều hành
+                            </label>
+                            <div class="col-md-10">
+                                <p>@Model.SanPham.CauHinh.HeDieuHanh</p>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label class="col-md-2">
+                                Ram
+                            </label>
+                            <div class="col-md-10">
+                                <p>@Model.SanPham.CauHinh.Ram</p>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label class="col-md-2">
+                                Camera trước
+                            </label>
+                            <div class="col-md-10">
+                                <p>@Model.SanPham.CauHinh.CMRTruoc</p>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label class="col-md-2">
+                                Camera sau
+                            </label>
+                            <div class="col-md-10">
+                                <p>@Model.SanPham.CauHinh.CMRSau</p>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label class="col-md-2">
+                                Bluetooth
+                            </label>
+                            <div class="col-md-10">
+                                <p>@Model.SanPham.CauHinh.Bluetooth</p>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label class="col-md-2">
+                                Pin
+                            </label>
+                            <div class="col-md-10">
+                                <p>@Model.SanPham.CauHinh.Pin</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
         <!-- End Detial Product -->
         <!-- Start Description Product -->
@@ -181,7 +308,7 @@
             </div>
         </div>
         <div class="tab-pane fade show active" id="description" role="tabpanel">
-            <span>
+            <span style="white-space:pre-wrap">
                 Độ phân giải    1242 x 2688 Pixels
                 Màn hình rộng   6.5"
                 Mặt kính cảm ứng    Kính oleophobic (ion cường lực)

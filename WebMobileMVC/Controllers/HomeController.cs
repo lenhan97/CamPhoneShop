@@ -15,34 +15,28 @@ namespace WebMobileMVC.Controllers
     {
         public IActionResult Index()
         {
-            DanhMuc listDM = new DanhMuc();
+            ModelChungTrangChu models = new ModelChungTrangChu();
+            models.dsDanhMuc = new DanhMuc();
+            models.dsSanPhamHot = new DSSanPham();
+            models.dsSanPhamSearch = new DSSanPham();
+
             using (WebClient webClient = new System.Net.WebClient())
             {
-                var json = webClient.DownloadString("http://localhost:5000/api/DanhMucSP/get");
-                string valueOriginal = Convert.ToString(json);
-                listDM = JsonConvert.DeserializeObject<DanhMuc>(valueOriginal);
+                var json1 = webClient.DownloadString("http://localhost:5000/api/DanhMucSP/get");
+                string valueOriginal1 = Convert.ToString(json1);
+                models.dsDanhMuc = JsonConvert.DeserializeObject<DanhMuc>(valueOriginal1);
+
+                var json2 = webClient.DownloadString("http://localhost:5000/api/SanPham/gettopsearch");
+                string valueOriginal2 = Convert.ToString(json2);
+                models.dsSanPhamHot = JsonConvert.DeserializeObject<DSSanPham>(valueOriginal2);
+
+                var json3 = webClient.DownloadString("http://localhost:5000/api/SanPham/gettopsearch");
+                string valueOriginal3 = Convert.ToString(json3);
+                models.dsSanPhamSearch = JsonConvert.DeserializeObject<DSSanPham>(valueOriginal3);
+
             }
 
-            return View(listDM);
-        }
-
-        public IActionResult About()
-        {
-            ViewData["Message"] = "Your application description page.";
-
-            return View();
-        }
-
-        public IActionResult Contact()
-        {
-            ViewData["Message"] = "Your contact page.";
-
-            return View();
-        }
-
-        public IActionResult Privacy()
-        {
-            return View();
+            return View(models);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

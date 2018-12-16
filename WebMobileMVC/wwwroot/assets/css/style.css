@@ -46,6 +46,49 @@
 /*--------------------------------------------
 2. Menu Styles
 --------------------------------------------*/
+.notification {
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+    color: #ddd;
+}
+
+.notification a:hover{
+    color: #ff531d;
+}
+
+.notification-dropdown {
+    display: none;
+    position: absolute;
+    min-width: 200px;
+    z-index: 1;
+    right: 0;
+    left: auto;
+    padding-left: 1px;
+    padding-right: 1px;
+    color: #000;
+    width: 350px;
+    text-align: justify;
+}
+
+.notification-dropdown li {
+  color: #3B3B3B;
+  padding: 12px 16px;
+  display: block;
+}
+
+.notification-dropdown a {
+    color: #000;
+}
+
+.notification:hover > .notification-dropdown {
+    display: block;
+    background-color: #F5F5F5;
+    border-radius: 20px;
+    border: 2px solid #F74D18;
+    border-top-right-radius: 0;
+}
+
 .sub-menu, .toolbar-dropdown {
     display: none;
     position: absolute;
@@ -817,19 +860,23 @@ figure figcaption {
 }
 
 .text-info {
-    color: #50c6e9 !important
+    color: #50c6e9 !important;
+    font-size: 20px;
 }
 
 .text-warning {
-    color: #ffb74f !important
+    color: #ffb74f !important;
+    font-size: 20px;
 }
 
 .text-success {
-    color: #43d9a3 !important
+    color: #43d9a3 !important;
+    font-size: 20px;
 }
 
 .text-danger {
-    color: #ff5252 !important
+    color: #ff5252 !important;
+    font-size: 20px;
 }
 
 .text-gray-dark {
@@ -1609,7 +1656,7 @@ p {
 }
 
 .text-lg {
-    font-size: 16px
+    font-size: 20px
 }
 
 .text-sm {
@@ -2291,7 +2338,8 @@ select.form-control.form-control-sm:not([size]):not([multiple]) {
     outline: none;
     background-image: none;
     text-decoration: none;
-    box-shadow: none
+    box-shadow: none;
+    color: red;
 }
 
 .btn:hover {
@@ -2369,6 +2417,12 @@ button:focus {
 
 .btn-primary:hover, .btn-primary:active, .btn-primary:focus, .btn-success:hover, .btn-success:active, .btn-success:focus, .btn-info:hover, .btn-info:active, .btn-info:focus, .btn-warning:hover, .btn-warning:active, .btn-warning:focus, .btn-danger:hover, .btn-danger:active, .btn-danger:focus {
     color: #fff
+}
+
+.btn-primary:disabled {
+color: #fff;
+background-color: orangered;
+border-color: #007bff;
 }
 
 .btn-primary {
@@ -3547,7 +3601,8 @@ button:focus {
 .pagination > .column {
     display: table-cell;
     padding-top: 16px;
-    vertical-align: middle
+    vertical-align: middle;
+    text-align: center;
 }
 
 .pagination .pages {
@@ -5809,7 +5864,7 @@ video {
     text-align: left
 }
 
-.topbar .topbar-column a:not(.social-button), .topbar .topbar-column span, .topbar .topbar-column p {
+.topbar .topbar-column a:not(.social-button, .notification), .topbar .topbar-column span, .topbar .topbar-column p {
     color: #606975;
     font-size: 15px
 }
@@ -5828,13 +5883,13 @@ video {
     margin-top: -4px
 }
 
-.topbar .topbar-column a:not(.social-button) {
+.topbar .topbar-column a:not(.social-button, .notification) {
     transition: color .3s;
     text-decoration: none;
     color: #fff;
 }
 
-.topbar .topbar-column a:not(.social-button):hover {
+.topbar .topbar-column a:not(.social-button, .notification):hover {
     color: #363636;
 }
 
@@ -6467,12 +6522,6 @@ video {
 
 .navbar-ghost:not(.navbar-stuck) .toolbar .toolbar-dropdown-group {
     color: #606975
-}
-
-@media (min-width: 1070px){
-    .toolbar .search{
-        display: none !important
-    }
 }
 
 @media (max-width: 1070px) {
@@ -7257,7 +7306,8 @@ video {
 }
 
 .shopping-cart, .wishlist-table, .order-table {
-    margin-bottom: 20px
+    margin-bottom: 20px;
+    overflow-x: hidden;
 }
 
 .shopping-cart .table, .wishlist-table .table, .order-table .table {

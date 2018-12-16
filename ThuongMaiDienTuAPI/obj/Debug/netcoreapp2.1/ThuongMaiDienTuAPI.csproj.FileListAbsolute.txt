@@ -122,3 +122,17 @@ D:/Project/TMDT/CamPhoneShop/ThuongMaiDienTuAPI/obj/Debug/netcoreapp2.1/ThuongMa
 /Users/LamHan/ProjectASP/CamPhoneShop/ThuongMaiDienTuAPI/obj/Debug/netcoreapp2.1/ThuongMaiDienTuAPI.RazorTargetAssemblyInfo.cache
 /Users/LamHan/ProjectASP/CamPhoneShop/ThuongMaiDienTuAPI/obj/Debug/netcoreapp2.1/ThuongMaiDienTuAPI.dll
 /Users/LamHan/ProjectASP/CamPhoneShop/ThuongMaiDienTuAPI/obj/Debug/netcoreapp2.1/ThuongMaiDienTuAPI.pdb
+/Users/vlamtu/Projects/hanphuoclam/CamPhoneShop.git/ThuongMaiDienTuAPI/bin/Debug/netcoreapp2.1/ThuongMaiDienTuAPI.deps.json
+/Users/vlamtu/Projects/hanphuoclam/CamPhoneShop.git/ThuongMaiDienTuAPI/bin/Debug/netcoreapp2.1/ThuongMaiDienTuAPI.runtimeconfig.json
+/Users/vlamtu/Projects/hanphuoclam/CamPhoneShop.git/ThuongMaiDienTuAPI/bin/Debug/netcoreapp2.1/ThuongMaiDienTuAPI.runtimeconfig.dev.json
+/Users/vlamtu/Projects/hanphuoclam/CamPhoneShop.git/ThuongMaiDienTuAPI/bin/Debug/netcoreapp2.1/ThuongMaiDienTuAPI.dll
+/Users/vlamtu/Projects/hanphuoclam/CamPhoneShop.git/ThuongMaiDienTuAPI/bin/Debug/netcoreapp2.1/ThuongMaiDienTuAPI.pdb
+/Users/vlamtu/Projects/hanphuoclam/CamPhoneShop.git/ThuongMaiDienTuAPI/obj/Debug/netcoreapp2.1/ThuongMaiDienTuAPI.csprojAssemblyReference.cache
+/Users/vlamtu/Projects/hanphuoclam/CamPhoneShop.git/ThuongMaiDienTuAPI/obj/Debug/netcoreapp2.1/ThuongMaiDienTuAPI.csproj.CoreCompileInputs.cache
+/Users/vlamtu/Projects/hanphuoclam/CamPhoneShop.git/ThuongMaiDienTuAPI/obj/Debug/netcoreapp2.1/ThuongMaiDienTuAPI.RazorAssemblyInfo.cache
+/Users/vlamtu/Projects/hanphuoclam/CamPhoneShop.git/ThuongMaiDienTuAPI/obj/Debug/netcoreapp2.1/ThuongMaiDienTuAPI.RazorAssemblyInfo.cs
+/Users/vlamtu/Projects/hanphuoclam/CamPhoneShop.git/ThuongMaiDienTuAPI/obj/Debug/netcoreapp2.1/ThuongMaiDienTuAPI.AssemblyInfoInputs.cache
+/Users/vlamtu/Projects/hanphuoclam/CamPhoneShop.git/ThuongMaiDienTuAPI/obj/Debug/netcoreapp2.1/ThuongMaiDienTuAPI.AssemblyInfo.cs
+/Users/vlamtu/Projects/hanphuoclam/CamPhoneShop.git/ThuongMaiDienTuAPI/obj/Debug/netcoreapp2.1/ThuongMaiDienTuAPI.RazorTargetAssemblyInfo.cache
+/Users/vlamtu/Projects/hanphuoclam/CamPhoneShop.git/ThuongMaiDienTuAPI/obj/Debug/netcoreapp2.1/ThuongMaiDienTuAPI.dll
+/Users/vlamtu/Projects/hanphuoclam/CamPhoneShop.git/ThuongMaiDienTuAPI/obj/Debug/netcoreapp2.1/ThuongMaiDienTuAPI.pdb

@@ -176,10 +176,11 @@ namespace ThuongMaiDienTuAPI.Services
         public async Task<object> GetTopBought()
         {
             var sanphamhot = Sorting<SanPham>.Get(db.SanPham, new SanPhamHotQuery());
+            //return await db.SanPham.Where(x => x.ID == 5).Include(x=>x.CauHinh).Include(x=>x.PhanLoaiSP).ToListAsync();// GetTopBought(db.SanPham);
             return new
             {
-                Total = sanphamhot.Count(),
-                Content = await GetTopBought(sanphamhot)
+                Total = 1,
+                Content = await GetTopBought(sanphamhot.Include(x=>x.CauHinh).Include(x=>x.PhanLoaiSP))
             };
         }
 
@@ -189,20 +190,23 @@ namespace ThuongMaiDienTuAPI.Services
             return await sanPhams.Where(x => phanloaisp.Any(y => y.IDSanPham == x.ID)).Select(x => new
             {
                 ID = x.ID,
+                Ten = x.Ten,
+                TenKhac = x.TenKhac,
                 IDCauHinh = x.IDCauHinh,
                 IDDanhMuc = x.IDDanhMuc,
                 IDSeller = x.IDSeller,
-                Mota = x.Mota,
-                ThoiGianBH = x.ThoiGianBH,
                 SLXem = x.SLXem,
-                Ten = x.Ten,
-                TenKhac = x.TenKhac,
+                Mota = x.Mota,
                 NoiDung = x.NoiDung,
                 Hinh = x.Hinh,
                 HinhCT = x.HinhCT,
+                ThoiGianBH = x.ThoiGianBH,
+                NgayTao = x.NgayTao,
+                TinhTrang = x.TinhTrang,
                 TinhTrangHang = x.TinhTrangHang,
                 CauHinh = db.CauHinh.Where(y => x.IDCauHinh == y.ID).Select(y => new
                 {
+                    ID = y.ID,
                     ThuongHieu = y.ThuongHieu,
                     BoNho = y.BoNho,
                     Mang = y.Mang,
@@ -224,9 +228,11 @@ namespace ThuongMaiDienTuAPI.Services
                     SoLuong = z.SoLuong,
                     GiaKM = z.GiaKM,
                     GiaBan = z.GiaBan,
+                    GiaGoc = z.GiaGoc,
                     Mau = z.Mau,
                     SLMua = z.SLMua
-                })
+                }),
+                IDKhuyenMai = x.IDKhuyenMai
             }).ToListAsync();
         }
 
