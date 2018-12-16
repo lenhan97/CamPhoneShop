@@ -225,3 +225,4 @@ D:/Project/TMDT/CamPhoneShop/WebMobileMVC/obj/Debug/netcoreapp2.1/WebMobileMVC.c
 /Users/vlamtu/Projects/hanphuoclam/CamPhoneShop.git/WebMobileMVC/obj/Debug/netcoreapp2.1/WebMobileMVC.dll
 /Users/vlamtu/Projects/hanphuoclam/CamPhoneShop.git/WebMobileMVC/obj/Debug/netcoreapp2.1/WebMobileMVC.pdb
 /Users/vlamtu/Projects/hanphuoclam/CamPhoneShop.git/WebMobileMVC/obj/Debug/netcoreapp2.1/WebMobileMVC.csproj.CopyComplete
+/Users/vlamtu/Projects/hanphuoclam/CamPhoneShop.git/WebMobileMVC/obj/Debug/netcoreapp2.1/Razor/Views/Account/Register.g.cshtml.cs

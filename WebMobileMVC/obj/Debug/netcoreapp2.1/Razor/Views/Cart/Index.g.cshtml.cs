@@ -166,7 +166,7 @@ using WebMobileMVC.Models;
             WriteLiteral("oltip\" title=\"Remove item\"><i class=\"icon-cross\"></i></a>\r\n                    </td>\r\n                </tr>\r\n            </tbody>\r\n        </table>\r\n    </div>\r\n    <div class=\"shopping-cart-footer\">\r\n        <div class=\"column\">\r\n            ");
             EndContext();
             BeginContext(5397, 265, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "445105bc2d954087b0f8356a3323f946", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c4f5de9915834a5792ac82e8aa7227ab", async() => {
                 BeginContext(5437, 218, true);
                 WriteLiteral("\r\n                <input class=\"form-control form-control-sm\" type=\"text\" placeholder=\"Mã giảm giá\" required>\r\n                <button class=\"btn btn-outline-primary btn-sm\" type=\"submit\">Áp dụng</button>\r\n            ");
                 EndContext();

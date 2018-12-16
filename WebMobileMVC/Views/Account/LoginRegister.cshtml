@@ -1,4 +1,4 @@
-﻿
+﻿@model WebMobileMVC.Models.LoginRegister
 @{
     Layout = "_Layout";
 }
@@ -31,10 +31,10 @@
                 </div>
                 <h4 class="margin-bottom-1x">Hoặc sử dụng tài khoản:</h4>
                 <div class="form-group input-group">
-                    <input class="form-control" type="email" placeholder="Nhập E-Mail" required><span class="input-group-addon"><i class="icon-mail"></i></span>
+                    <input class="form-control" asp-for="loginDto.TenDN" type="email" placeholder="Nhập E-Mail" required><span class="input-group-addon"><i class="icon-mail"></i></span>
                 </div>
                 <div class="form-group input-group">
-                    <input class="form-control" type="password" placeholder="Nhập mật khẩu" required><span class="input-group-addon"><i class="icon-lock"></i></span>
+                    <input class="form-control" asp-for="loginDto.Matkhau" type="password" placeholder="Nhập mật khẩu" required><span class="input-group-addon"><i class="icon-lock"></i></span>
                 </div>
                 <div class="d-flex flex-wrap justify-content-between padding-bottom-1x">
                     <div class="custom-control custom-checkbox">
@@ -51,7 +51,7 @@
             <div class="padding-top-3x hidden-md-up"></div>
             <h3 class="margin-bottom-1x padding-top-1x">Chưa có tài khoản? Đăng ký tại đây</h3>
             <p>Hãy điền đầy đủ các thông tin sau để đăng ký ...</p>
-            <form class="row" method="post">
+            <form class="row" asp-controller="Account" asp-action="Register" method="post">
                 <div class="col-sm-6">
                     <div class="form-group">
                         <label for="reg-fn">Họ</label>
@@ -60,26 +60,26 @@
                 </div>
                 <div class="col-sm-6">
                     <div class="form-group">
-                        <label for="reg-ln">Tên</label>
-                        <input class="form-control" type="text" id="reg-ln" required>
+                        <label asp-for="registerDto.Ten">Tên</label>
+                        <input class="form-control" type="text" asp-for="registerDto.Ten" required>
                     </div>
                 </div>
                 <div class="col-sm-6">
                     <div class="form-group">
-                        <label for="reg-email">Địa chỉ E-Mail</label>
-                        <input class="form-control" type="email" id="reg-email" required>
+                        <label asp-for="registerDto.Mail">Địa chỉ E-Mail</label>
+                        <input class="form-control" type="email" asp-for="registerDto.Mail" required>
                     </div>
                 </div>
                 <div class="col-sm-6">
                     <div class="form-group">
-                        <label for="reg-phone">Số điện thoại</label>
-                        <input class="form-control" type="text" id="reg-phone" required>
+                        <label asp-for="registerDto.SDT">Số điện thoại</label>
+                        <input class="form-control" type="number" asp-for="registerDto.SDT" required>
                     </div>
                 </div>
                 <div class="col-sm-6">
                     <div class="form-group">
-                        <label for="reg-pass">Mật khẩu</label>
-                        <input class="form-control" type="password" id="reg-pass" required>
+                        <label asp-for="registerDto.MatKhau">Mật khẩu</label>
+                        <input class="form-control" type="password" asp-for="registerDto.MatKhau" required>
                     </div>
                 </div>
                 <div class="col-sm-6">

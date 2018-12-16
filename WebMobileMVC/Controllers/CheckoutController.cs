@@ -15,5 +15,20 @@ namespace WebMobileMVC.Controllers
         {
             return View();
         }
+
+        public IActionResult Review()
+        {
+            return View();
+        }
+
+        public IActionResult Shipping()
+        {
+            return View();
+        }
+
+        public IActionResult Complete()
+        {
+            return View();
+        }
     }
 }

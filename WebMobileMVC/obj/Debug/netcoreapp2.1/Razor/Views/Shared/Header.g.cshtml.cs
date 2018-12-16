@@ -65,7 +65,7 @@ using WebMobileMVC.Models;
         ");
             EndContext();
             BeginContext(379, 400, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e454d0a4037b4b8e867974a74bd5ae81", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1e16aea1fe464b7aaa39d29302300da6", async() => {
                 BeginContext(405, 367, true);
                 WriteLiteral(@"
             <input type=""text"" name=""site_search"" class=""form-control"" placeholder=""Tên sản phẩm, tên shop,..."" aria-label=""Recipient's username"" aria-describedby=""button-addon2"">
