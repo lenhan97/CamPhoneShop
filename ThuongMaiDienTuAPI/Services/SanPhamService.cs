@@ -117,6 +117,10 @@ namespace ThuongMaiDienTuAPI.Services
         private IQueryable<SanPham> Filtering(IQueryable<SanPham> sp, SanPhamQuery query)
         {
 
+            if(query.IDPhanLoaiSP != null)
+            {
+                sp = sp.Where(x => db.PhanLoaiSP.Any(y => y.IDSanPham == x.ID && y.ID == query.IDPhanLoaiSP));
+            }
             if (query.IDSeller != null)
             {
                 sp = sp.Where(x => x.IDSeller == query.IDSeller);

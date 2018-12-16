@@ -103,6 +103,19 @@ namespace ThuongMaiDienTuAPI.Controllers
         {
             return Ok(await sanPhamService.GetById(id));
         }
-
+        [HttpPost]
+        [Route("update")]
+        [AllowAnonymous]
+        public async Task<IActionResult> Update(int id, [FromBody] SanPhamDto sanPhamDto)
+        {
+            int idSeller = 1; //User.GetIdSeller();
+            SanPham sanPham = mapper.Map<SanPham>(sanPhamDto);
+            sanPham.ID = id;
+            if (await sanPhamService.Update(idSeller, sanPham))
+            {
+                return Ok();
+            }
+            return BadRequest();
+        }
     }
 }

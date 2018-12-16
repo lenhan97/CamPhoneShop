@@ -11,6 +11,8 @@ namespace ThuongMaiDienTuAPI.Dtos.Queries
         public int? FromGiaKM { get; set; } = null;
         public int? ToGiaKM { get; set; } = null;
 
+        public int? IDPhanLoaiSP { get; set; } = null;
+
         public int? FromSoLuong { get; set; } = null;
         public int? ToSoLuong { get; set; } = null;
         public int? IDDanhMuc { get; set; } = null;
