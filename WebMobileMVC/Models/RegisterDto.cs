@@ -1,5 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
-namespace ThuongMaiDienTuAPI.Dtos
+namespace WebMobileMVC.Models
 {
     public class RegisterDto
     {

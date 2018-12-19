@@ -22,6 +22,7 @@ namespace WebMobileMVC.Controllers
 
             using (WebClient webClient = new System.Net.WebClient())
             {
+                
                 var json1 = webClient.DownloadString("http://localhost:5000/api/DanhMucSP/get");
                 string valueOriginal1 = Convert.ToString(json1);
                 models.danhSachDanhMuc = JsonConvert.DeserializeObject<DanhMuc>(valueOriginal1);

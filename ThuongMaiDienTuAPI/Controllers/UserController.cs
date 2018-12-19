@@ -30,7 +30,7 @@ namespace ThuongMaiDienTuAPI.Controllers
             this.config = config;
             this.mapper = mapper;
         }
-        //[AllowAnonymous]
+        [AllowAnonymous]
         [HttpGet]
         [Route("get")]
         public async Task<IActionResult> Get([FromQuery] UserQuery query)

@@ -72,10 +72,10 @@
 <section class="bg-secondary padding-top-1x padding-bottom-1x">
     <div class="container">
         <ul class="nav nav-pills justify-content-center">
-            @foreach (DanhMucSP i in Model.dsDanhMuc.content)
-            {
-                <a class="btn btn-outline-primary-2" href="#">@i.Ten</a>
-            }
+            @foreach (DanhMucSP i in Model.dsDanhMuc.Content)
+    {
+        <a class="btn btn-outline-primary-2" href="#">@i.Ten</a>
+}
         </ul>
     </div>
 </section>
@@ -85,7 +85,7 @@
     <h3 class="text-center mb-30">SẢN PHẨM HOT</h3>
     <div class="owl-carousel"
          data-owl-carousel='{"nav": true, "dots": true, "margin": 30, "responsive": {"0":{"items":1},"576":{"items":2},"768":{"items":3},"991":{"items":4},"1200":{"items":4}} }'>
-        @foreach (SanPham i in Model.dsSanPhamHot.content)
+        @foreach (SanPham i in Model.dsSanPhamHot.Content)
         {
             <!-- Start Product -->
             <div class="grid-item">
@@ -130,7 +130,7 @@
     <div class="isotope-grid cols-4">
         <div class="gutter-sizer"></div>
         <div class="grid-sizer"></div>
-        @foreach (SanPham i in Model.dsSanPhamSearch.content)
+        @foreach (SanPham i in Model.dsSanPhamSearch.Content)
         {
             <!-- Start Product -->
             <div class="grid-item">

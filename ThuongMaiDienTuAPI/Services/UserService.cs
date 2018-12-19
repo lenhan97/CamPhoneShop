@@ -61,7 +61,7 @@ namespace ThuongMaiDienTuAPI.Services
         {
             User user = await Get(login.TenDN);
             //Debug.WriteLine(user.IdUser + " " + user.TenDN + " " + user.Matkhau);
-            if (user == null||user.Matkhau.Trim()!=Encryptor.MD5Hash(login.Matkhau))
+            if (user == null||user.Matkhau.Trim()!=login.Matkhau)
                 return null;
             return user;
         }
