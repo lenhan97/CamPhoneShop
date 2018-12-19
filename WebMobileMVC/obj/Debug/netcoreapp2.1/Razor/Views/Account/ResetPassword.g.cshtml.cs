@@ -90,7 +90,7 @@ using WebMobileMVC.Models;
             WriteLiteral("\r\n                <li><span class=\"text-primary text-medium\">3. </span>Use the link to change your password.</li>\r\n            </ol>\r\n            ");
             EndContext();
             BeginContext(1204, 484, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "fc631256bf2c415196b77d0debc82e06", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2722a322020547a3b67f347da4c125b0", async() => {
                 BeginContext(1228, 453, true);
                 WriteLiteral(@"
                 <div class=""card-body"">

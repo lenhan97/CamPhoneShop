@@ -225,6 +225,7 @@ D:/Project/TMDT/CamPhoneShop/WebMobileMVC/obj/Debug/netcoreapp2.1/WebMobileMVC.c
 /Users/vlamtu/Projects/hanphuoclam/CamPhoneShop.git/WebMobileMVC/obj/Debug/netcoreapp2.1/WebMobileMVC.dll
 /Users/vlamtu/Projects/hanphuoclam/CamPhoneShop.git/WebMobileMVC/obj/Debug/netcoreapp2.1/WebMobileMVC.pdb
 /Users/vlamtu/Projects/hanphuoclam/CamPhoneShop.git/WebMobileMVC/obj/Debug/netcoreapp2.1/WebMobileMVC.csproj.CopyComplete
+<<<<<<< HEAD
 /Users/LamHan/ProjectASP/CamPhoneShop/WebMobileMVC/obj/Debug/netcoreapp2.1/WebMobileMVC.csprojAssemblyReference.cache
 /Users/LamHan/ProjectASP/CamPhoneShop/WebMobileMVC/obj/Debug/netcoreapp2.1/WebMobileMVC.csproj.CoreCompileInputs.cache
 /Users/LamHan/ProjectASP/CamPhoneShop/WebMobileMVC/obj/Debug/netcoreapp2.1/WebMobileMVC.RazorAssemblyInfo.cache
@@ -274,3 +275,6 @@ D:/Project/TMDT/CamPhoneShop/WebMobileMVC/obj/Debug/netcoreapp2.1/WebMobileMVC.c
 /Users/LamHan/ProjectASP/CamPhoneShop/WebMobileMVC/obj/Debug/netcoreapp2.1/WebMobileMVC.Views.pdb
 /Users/LamHan/ProjectASP/CamPhoneShop/WebMobileMVC/obj/Debug/netcoreapp2.1/WebMobileMVC.csproj.CopyComplete
 /Users/LamHan/ProjectASP/CamPhoneShop/WebMobileMVC/obj/Debug/netcoreapp2.1/Razor/Views/Account/Register.g.cshtml.cs
+=======
+/Users/vlamtu/Projects/hanphuoclam/CamPhoneShop.git/WebMobileMVC/obj/Debug/netcoreapp2.1/Razor/Views/Account/Register.g.cshtml.cs
+>>>>>>> 8a68b5ddf2e40c36eba921e8603f80f214615874

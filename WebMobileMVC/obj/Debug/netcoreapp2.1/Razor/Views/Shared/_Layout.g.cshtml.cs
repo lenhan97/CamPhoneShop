@@ -57,7 +57,7 @@ using WebMobileMVC.Models;
             WriteLiteral("<!DOCTYPE html>\r\n<html lang=\"zxx\">\r\n");
             EndContext();
             BeginContext(36, 1285, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "80b5d7b7fa2943e1bd486a11bde294b9", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "690504b0d353479c85571159fbb637a4", async() => {
                 BeginContext(42, 1272, true);
                 WriteLiteral(@"
     <meta charset=""utf-8"">
@@ -99,7 +99,7 @@ using WebMobileMVC.Models;
             WriteLiteral("\r\n");
             EndContext();
             BeginContext(1323, 3610, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "bf218ac7ba2742d89dc61908e48ed2b5", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "35945df63e1c4d3cb27d0521cc76416f", async() => {
                 BeginContext(1329, 1950, true);
                 WriteLiteral(@"
     <!-- Start Page Preloader -->
@@ -140,7 +140,7 @@ using WebMobileMVC.Models;
     ");
                 EndContext();
                 BeginContext(3279, 32, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("partial", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "2f6ba08866ec4deea60641fca1fe628c", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("partial", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "903d9f0ffbd44681a71e5c9a3ab3f2cb", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_PartialTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.PartialTagHelper>();
@@ -169,7 +169,7 @@ using WebMobileMVC.Models;
                 WriteLiteral("\r\n        <!-- Start Footer -->\r\n        ");
                 EndContext();
                 BeginContext(3446, 32, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("partial", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "bda392f8141b40ef823d064d9b7d3542", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("partial", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "1d9d4f30f7794c06830104b515af5d6f", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_PartialTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.PartialTagHelper>();
