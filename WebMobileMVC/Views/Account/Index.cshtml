@@ -1,4 +1,4 @@
-﻿
+﻿@model WebMobileMVC.Models.KhachHang
 @{
     Layout = "_Layout";
 }
@@ -45,23 +45,23 @@
         </div>
         <div class="col-lg-8">
             <div class="padding-top-2x mt-2 hidden-lg-up"></div>
-            <form class="row">
+            <form asp-controller="Account" asp-action="Index" method="post" class="row">
                 <div class="col-md-6">
                     <div class="form-group">
-                        <label for="account-ln">Tên khách hàng</label>
-                        <input class="form-control" type="text" id="account-ln" placeholder="Stark" required>
+                        <label asp-for="Ten">Tên khách hàng</label>
+                        <input class="form-control" asp-for="Ten"  type="text" id="account-ln" placeholder="Stark" value="@Model.Ten" required>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="form-group">
-                        <label for="account-email">E-Mail</label>
-                        <input class="form-control" type="email" id="account-email" placeholder="tony.stark@gmail.com" required>
+                        <label asp-for="Mail">E-Mail</label>
+                        <input class="form-control" asp-for="Mail" type="email" id="account-email" disabled placeholder="tony.stark@gmail.com" value="@Model.Mail" required>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="form-group">
-                        <label for="account-phone">Số điện thoại</label>
-                        <input class="form-control" type="text" id="account-phone" placeholder="888 888 8888" required>
+                        <label asp-for="SDT">Số điện thoại</label>
+                        <input class="form-control" asp-for="SDT" type="text" id="account-phone" placeholder="888 888 8888" value="@Model.SDT" required>
                     </div>
                 </div>
                 <div class="col-12">
@@ -72,31 +72,31 @@
                 </div>
                 <div class="col-md-6">
                     <div class="form-group">
-                        <label for="tinh-thanh">Tỉnh/Thành</label>
-                        <input class="form-control" type="text" id="tinh-thanh" placeholder="Tỉnh / Thành phố" required>
+                        <label asp-for="DiaChi.TinhTP">Tỉnh/Thành</label>
+                        <input class="form-control" asp-for="DiaChi.TinhTP" type="text" id="tinh-thanh" placeholder="Tỉnh / Thành phố" value="@Model.DiaChi.TinhTP" required>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="form-group">
-                        <label for="quan-huyen">Quận/Huyện</label>
-                        <input class="form-control" type="text" id="quan-huyen" placeholder="Quận / Huyện" required>
+                        <label asp-for="DiaChi.QuanHuyen">Quận/Huyện</label>
+                        <input class="form-control" asp-for="DiaChi.QuanHuyen" type="text" id="quan-huyen" placeholder="Quận / Huyện" value="@Model.DiaChi.QuanHuyen" required>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="form-group">
-                        <label for="phuong-xa">Phường/Xã</label>
-                        <input class="form-control" type="text" id="phuong-xa" placeholder="Phường / Xã" required>
+                        <label asp-for="DiaChi.PhuongXa">Phường/Xã</label>
+                        <input class="form-control" asp-for="DiaChi.PhuongXa" type="text" id="phuong-xa" placeholder="Phường / Xã" value="@Model.DiaChi.PhuongXa" required>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="form-group">
-                        <label for="sonha-tenduong">Số nhà, Tên đường</label>
-                        <input class="form-control" type="text" id="sonha-tenduong" placeholder="Số nhà cụ thể, tên đường" required>
+                        <label asp-for="DiaChi.Duong">Số nhà, Tên đường</label>
+                        <input class="form-control" asp-for="DiaChi.Duong" type="text" id="sonha-tenduong" placeholder="Số nhà cụ thể, tên đường" value="@Model.DiaChi.Duong" required>
                     </div>
                 </div>
                 <div class="col-12">
                     <hr class="mt-2 mb-3">
-                    <center><button class="btn btn-primary" type="button" data-toast data-toast-position="topRight" data-toast-type="success" data-toast-icon="icon-circle-check" data-toast-title="Success!" data-toast-message="Your profile updated successfuly.">Lưu</button></center>
+                    <center><button class="btn btn-primary" type="submit">Lưu</button></center>
                 </div>
             </form>
         </div>

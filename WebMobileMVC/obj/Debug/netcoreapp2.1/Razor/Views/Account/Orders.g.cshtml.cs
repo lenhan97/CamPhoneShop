@@ -111,7 +111,7 @@ using WebMobileMVC.Models;
                         ");
             EndContext();
             BeginContext(2620, 25, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e6b7450cf6304c1b8b89a676b8c8ab56", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f8c42c20cadc485789ff1145165114ab", async() => {
                 BeginContext(2628, 8, true);
                 WriteLiteral("Mặc định");
                 EndContext();
@@ -131,7 +131,7 @@ using WebMobileMVC.Models;
             WriteLiteral("\r\n                        ");
             EndContext();
             BeginContext(2671, 30, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4114fde4f19b42cf8f7ebb803846f980", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3b375b4c9d4643deb764cd2966f5acc5", async() => {
                 BeginContext(2679, 13, true);
                 WriteLiteral("Ngày mới - cũ");
                 EndContext();
@@ -151,7 +151,7 @@ using WebMobileMVC.Models;
             WriteLiteral("\r\n                        ");
             EndContext();
             BeginContext(2727, 30, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "509f9f93bd914f45bc44ca7e29ba79ff", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c037af6a9ad14172a912adc1ed6b6306", async() => {
                 BeginContext(2735, 13, true);
                 WriteLiteral("Ngày cũ - mới");
                 EndContext();

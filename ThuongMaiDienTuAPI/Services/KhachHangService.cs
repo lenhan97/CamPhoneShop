@@ -1,6 +1,7 @@
 ﻿using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
+using ThuongMaiDienTuAPI.Dtos;
 using ThuongMaiDienTuAPI.Dtos.Queries;
 using ThuongMaiDienTuAPI.Entities;
 using ThuongMaiDienTuAPI.Helpers;
@@ -57,17 +58,20 @@ namespace ThuongMaiDienTuAPI.Services
         public async Task<KhachHang> GetByIdUser(int idUser)
         {
             int idKhachHang = (await db.User.FindAsync(idUser)).IDKhachHang;
-            return await db.KhachHang.FindAsync(idKhachHang);
+            return await db.KhachHang.Include(x=>x.DiaChi).Where(x=>x.ID == idKhachHang).FirstOrDefaultAsync();
         }
 
-        public async Task<bool> Update(KhachHang khachHang)
+        public async Task<bool> Update(KhachHang kh)
         {
-            if (!db.KhachHang.Any(x => x.ID == khachHang.ID))
-            {
-                return false;
-            }
-            db.KhachHang.Attach(khachHang);
-            db.Entry(khachHang).State = EntityState.Modified;
+            KhachHang khachHang = await db.KhachHang.Include(x=>x.DiaChi).Where(x=>x.ID == kh.ID).FirstOrDefaultAsync();
+            khachHang.DiaChi.Duong = kh.DiaChi.Duong;
+            khachHang.DiaChi.SoNha = kh.DiaChi.SoNha;
+            khachHang.DiaChi.TinhTP = kh.DiaChi.TinhTP;
+            khachHang.DiaChi.PhuongXa = kh.DiaChi.PhuongXa;
+            khachHang.DiaChi.QuanHuyen = kh.DiaChi.QuanHuyen;
+            khachHang.Ten = kh.Ten;
+            khachHang.SDT = kh.SDT;
+
             await db.SaveChangesAsync();
             return true;
         }

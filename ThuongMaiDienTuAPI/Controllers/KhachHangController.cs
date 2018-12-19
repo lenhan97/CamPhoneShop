@@ -6,6 +6,7 @@ using ThuongMaiDienTuAPI.Dtos;
 using ThuongMaiDienTuAPI.Dtos.Queries;
 using ThuongMaiDienTuAPI.Entities;
 using ThuongMaiDienTuAPI.Interfaces;
+using ThuongMaiDienTuAPI.Helpers;
 namespace ThuongMaiDienTuAPI.Controllers
 {
     [Authorize]
@@ -28,19 +29,30 @@ namespace ThuongMaiDienTuAPI.Controllers
         {
             return Ok(await _khachHangService.Get(query));
         }
+
+        [Authorize]
+        [HttpGet]
+        [Route("getinfo")]
+        public async Task<IActionResult> GetByIdUser()
+        {
+            return Ok(await _khachHangService.GetByIdUser(User.GetIdUser()));
+        }
+
         [AllowAnonymous]
-        [Route("getbyiduser")]
-        [HttpGet("{id}")]
+        [Route("getbyiduser/{id:int}")]
+        [HttpGet]
         public async Task<IActionResult> GetByIdUser(int idUser)
         {
             return Ok(await _khachHangService.GetByIdUser(idUser));
         }
 
-        [HttpPut]
+        [HttpPost]
         [Route("update")]
         public async Task<IActionResult> Update([FromBody] KhachHangDto khachhangdto)
         {
-            if (await _khachHangService.Update(_mapper.Map<KhachHang>(khachhangdto)))
+            KhachHang khachHang = _mapper.Map<KhachHang>(khachhangdto);
+            khachHang.ID = User.GetIdCustomer();
+            if (await _khachHangService.Update(khachHang))
             {
                 return Ok();
             }

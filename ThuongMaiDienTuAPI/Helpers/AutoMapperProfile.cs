@@ -22,6 +22,8 @@ namespace ThuongMaiDienTuAPI.Helpers
             CreateMap<DiaChiDto, DiaChi>();
             CreateMap<RegisterDto, User>();
             CreateMap<RegisterDto, KhachHang>();
+            CreateMap<KhachHang, KhachHangDto>();
+            CreateMap<KhachHangDto, KhachHang>();
             CreateMap<SellerDto, Seller>();
             CreateMap<DanhGiaDto, DanhGia>();
             CreateMap<PhanLoaiSP, PhanLoaiSPCommonViewDto>();

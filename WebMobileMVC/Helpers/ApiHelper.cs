@@ -88,7 +88,8 @@ namespace WebMobileMVC.Helpers
                 switch (apiType)
                 {
                     case ApiType.Post:
-                        res = client.PostAsync(apiUrl, content).Result;
+                        var obj = Newtonsoft.Json.JsonConvert.DeserializeObject<TOutputModel>(bodyJson);
+                        res = client.PostAsJsonAsync<TOutputModel>(apiUrl, obj).Result;
                         break;
                     case ApiType.Get:
                         res = client.GetAsync(apiUrl).Result;

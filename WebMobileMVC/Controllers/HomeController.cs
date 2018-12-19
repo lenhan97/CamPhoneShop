@@ -1,12 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Net;
-using System.Threading.Tasks;
+﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
 using WebMobileMVC.Helpers;
 using WebMobileMVC.Models;
 
@@ -14,6 +7,7 @@ namespace WebMobileMVC.Controllers
 {
     public class HomeController : Controller
     {
+        KhachHang khachHang = new KhachHang();
         public IActionResult Index()
         {
             HomeModel models = new HomeModel();
@@ -29,5 +23,13 @@ namespace WebMobileMVC.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
+
+        //public PartialViewResult Header()
+        //{
+        //    khachHang = ApiHelper.Get<KhachHang>(ConstantVariable.URLBase.baseUrl + "khachhang/getinfo");
+            
+        //    return PartialView(khachHang);
+        //}
     }
 }

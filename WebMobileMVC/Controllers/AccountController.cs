@@ -3,6 +3,7 @@ using System;
 using System.Net.Http;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using WebMobileMVC.Helpers;
 using WebMobileMVC.Models;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -11,25 +12,29 @@ namespace WebMobileMVC.Controllers
 {
     public class AccountController : Controller
     {
+        KhachHang khachhang = new KhachHang();
+        private void GetInfo()
+        {
+            khachhang = ApiHelper.Get<KhachHang>(ConstantVariable.URLBase.baseUrl + "khachhang/getinfo");
+        }
         // GET: /<controller>/
-        //[HttpGet]
+        [HttpGet]
         public IActionResult Index()
         {
-            //DSKhachHang listKH = new DSKhachHang();
+            GetInfo();
 
-            //var json1 = WebClient.DownloadString("http://localhost:5000/api/khachhang/get/1");
-            //string valueOriginal1 = Convert.ToString(json1);
-            //listKH = JsonConvert.DeserializeObject<DSKhachHang>(valueOriginal1);
-
-            //return View(listKH);
-            return View();
+            return View(khachhang);
         }
 
-        //[HttpPost]
-        //public async Task<IActionResult> Index([Bind("Ten,SDT,Mail")] KhachHangDto khachHang)
-        //{
-        //    return View();
-        //}
+        [HttpPost]
+        public IActionResult Index([Bind("Ten,Mail,SDT,DiaChi")] KhachHangDto khachhangDto)
+        {
+            khachhangDto.DiaChi.SoNha = "";
+            var json = Newtonsoft.Json.JsonConvert.SerializeObject(khachhangDto);
+            var result = ApiHelper.Post<KhachHangDto>(ConstantVariable.URLBase.baseUrl + "khachhang/update", json);
+            GetInfo();
+            return View(khachhang);
+        }
 
         public IActionResult LoginRegister()
         {
@@ -74,13 +79,8 @@ namespace WebMobileMVC.Controllers
         [HttpPost]
         public async Task<IActionResult> Register([Bind("Ten,SDT,Mail,MatKhau")] RegisterDto register)
         {
-            //DiaChiDto diaChi = new DiaChiDto();
-            //diaChi.SoNha = "123";
-            //diaChi.Duong = "TL 19";
-            //diaChi.PhuongXa = "Thanh Loc";
-            //diaChi.QuanHuyen = "12";
-            //diaChi.TinhTP = "HCM";
-            //register.Diachi = diaChi;
+            DiaChiDto diaChi = new DiaChiDto();
+            register.Diachi = diaChi;
             if(register.TenDN == null)
             {
                 register.TenDN = register.Mail;
@@ -116,9 +116,9 @@ namespace WebMobileMVC.Controllers
                 if(post.IsSuccessStatusCode)
                 {
                     string token = result.Split(":")[1];
-                    Helpers.ConstantVariable.token = token.Substring(1, token.Length - 2);
+                    Helpers.ConstantVariable.token = token.Substring(1, token.Length - 3);
                     //return home
-
+                    return RedirectToAction("index");
                 }
 
             }
