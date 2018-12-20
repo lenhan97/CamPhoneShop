@@ -19,7 +19,7 @@ Tài khoản đăng nhập: Username/Password
 admin/admin123
 ```
 
-Account merchant:
+Người bán:
 
 ```
 Tài khoản đăng nhập: Username/Password
@@ -28,7 +28,7 @@ merchantB / merchant2
 
 ```
 
-Account customer:
+Người mua:
 
 ```
 Tài khoản đăng nhập: Username/Password
