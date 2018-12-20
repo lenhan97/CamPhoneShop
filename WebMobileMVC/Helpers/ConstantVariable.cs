@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
+using WebMobileMVC.Models;
+
 namespace WebMobileMVC.Helpers
 {
     public static class ConstantVariable
@@ -8,5 +11,6 @@ namespace WebMobileMVC.Helpers
         {
             public static string baseUrl = "http://localhost:5000/api/";
         }
+        public static List<SanPham> dsSanPham = new List<SanPham>();
     }
 }

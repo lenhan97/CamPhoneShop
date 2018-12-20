@@ -278,3 +278,4 @@ D:/Project/TMDT/CamPhoneShop/WebMobileMVC/obj/Debug/netcoreapp2.1/WebMobileMVC.c
 =======
 /Users/vlamtu/Projects/hanphuoclam/CamPhoneShop.git/WebMobileMVC/obj/Debug/netcoreapp2.1/Razor/Views/Account/Register.g.cshtml.cs
 >>>>>>> 8a68b5ddf2e40c36eba921e8603f80f214615874
+/Users/vlamtu/Projects/hanphuoclam/CamPhoneShop.git/WebMobileMVC/obj/Debug/netcoreapp2.1/Razor/Views/Shared/Components/Header/Default.g.cshtml.cs

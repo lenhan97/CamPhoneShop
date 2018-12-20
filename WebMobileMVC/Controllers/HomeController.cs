@@ -24,12 +24,11 @@ namespace WebMobileMVC.Controllers
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
 
-
-        //public PartialViewResult Header()
+        //public IActionResult Header()
         //{
         //    khachHang = ApiHelper.Get<KhachHang>(ConstantVariable.URLBase.baseUrl + "khachhang/getinfo");
             
-        //    return PartialView(khachHang);
+        //    return ViewComponent("Header");
         //}
     }
 }

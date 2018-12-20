@@ -27,7 +27,7 @@ namespace WebMobileMVC.Controllers
                 string valueOriginal1 = Convert.ToString(json1);
                 models.danhSachDanhMuc = JsonConvert.DeserializeObject<DanhMuc>(valueOriginal1);
 
-                var json2 = webClient.DownloadString("http://localhost:5000/api/SanPham/"+id);
+                var json2 = webClient.DownloadString("http://localhost:5000/api/SanPham/get?"+ id);
                 string valueOriginal2 = Convert.ToString(json2);
                 models.danhSachSanPham = JsonConvert.DeserializeObject<DSSanPham>(valueOriginal2);
             }
