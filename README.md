@@ -60,11 +60,12 @@ webmobile
 
 Bước 4: Đổi chuỗi ConnectString trong Visual Studio
 
-![48386722_271696613496816_6788967582591352832_n](https://user-images.githubusercontent.com/32255703/50265523-967b4080-0452-11e9-8a46-119462c11c9e.png)
+![untitled](https://user-images.githubusercontent.com/32255703/50274583-2c719400-0470-11e9-9382-c6c2ee846a01.png)
+
 
 Đổi server name của máy ( Lấy tên server name của máy tại đây)
 
-![capture2](https://user-images.githubusercontent.com/32255703/50265667-2c16d000-0453-11e9-9507-8024f9c45328.PNG)
+![111](https://user-images.githubusercontent.com/32255703/50274727-7eb2b500-0470-11e9-8d3f-2ca73f8c5fb6.png)
 
 
 ### Hướng dẫn sử dụng 
@@ -75,7 +76,7 @@ Vào thư mục chứa project ThuongMaiDienTuAPI mở lên run two project
 
 ![1](https://user-images.githubusercontent.com/32255703/50270272-95064400-0463-11e9-8af4-8eb38ca524ed.png)
 
-Đối với Macbook
+Đối với Mac OS
 
 ![48375282_1125171697657795_5198077259105173504_n](https://user-images.githubusercontent.com/32255703/50270475-44dbb180-0464-11e9-8665-43dad843372b.png)
 
