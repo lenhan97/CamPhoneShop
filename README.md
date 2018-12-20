@@ -60,12 +60,12 @@ webmobile
 
 Bước 4: Đổi chuỗi ConnectString trong Visual Studio
 
-![untitled](https://user-images.githubusercontent.com/32255703/50274583-2c719400-0470-11e9-9382-c6c2ee846a01.png)
+![111](https://user-images.githubusercontent.com/32255703/50274727-7eb2b500-0470-11e9-8d3f-2ca73f8c5fb6.png)
 
 
 Đổi server name của máy ( Lấy tên server name của máy tại đây)
 
-![111](https://user-images.githubusercontent.com/32255703/50274727-7eb2b500-0470-11e9-8d3f-2ca73f8c5fb6.png)
+![112](https://user-images.githubusercontent.com/32255703/50275008-04366500-0471-11e9-832f-e6c8462e1c2c.PNG)
 
 
 ### Hướng dẫn sử dụng 
