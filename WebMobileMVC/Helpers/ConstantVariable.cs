@@ -11,6 +11,10 @@ namespace WebMobileMVC.Helpers
         {
             public static string baseUrl = "http://localhost:5000/api/";
         }
-        public static List<SanPham> dsSanPham = new List<SanPham>();
+        public static class URLClient
+        {
+            public static string baseUrl = "https://localhost:5001/";
+        }
+        public static List<CartViewModel> dsSanPham = new List<CartViewModel>();
     }
 }

@@ -32,48 +32,48 @@
                     <th class="text-center">Gía khuyến mãi</th>
                     <th class="text-center">Tổng</th>
                     <th class="text-center">
-                        <a class="btn btn-sm btn-outline-danger" href="#">Xoá tất cả</a>
+                        <a class="btn btn-sm btn-outline-danger" href="https://localhost:5001/cart/del">Xoá tất cả</a>
                     </th>
                 </tr>
             </thead>
             <tbody>
-                @foreach (SanPham i in Model)
+                @foreach (CartViewModel i in Model)
                 {
                     <tr>
                         <td>
                             <div class="product-item">
-                                <a class="product-thumb" href="shop-single-1.html">
+                                <a class="product-thumb" href="https://localhost:5001/product/detail/@i.ID">
                                     <img src=@i.Hinh alt="Product">
                                 </a>
                                 <div class="product-info">
-                                    <h4 class="product-title"><a href="shop-single-1.html">@i.Ten</a></h4>
-                                    <span><em>Màu:</em> @i.PhanLoaiSP[0].Mau</span>
+                                    <h4 class="product-title"><a href="https://localhost:5001/product/detail/@i.ID">@i.Ten</a></h4>
+                                    <span><em>Màu:</em> @i.Mau</span>
                                 </div>
                             </div>
                         </td>
                         <td class="text-center">
                             <div class="count-input">
-                                <input id="soluong" type="number" step="1" min="1" max="" name="quantity" value="1" title="Qty" class="input-text qty text" size="4" pattern="[0-9]*" inputmode="numeric" style="width: 60px">
+                                <input id="soluong" type="number" step="1" min="1" max="" name="quantity" value="@i.SoLuong" title="Qty" class="input-text qty text" size="4" pattern="[0-9]*" inputmode="numeric" style="width: 60px">
                             </div>
                         </td>
 
-                        <td class="text-center text-lg text-medium">@i.PhanLoaiSP[0].GiaBan đ</td>
+                        <td class="text-center text-lg text-medium">@i.GiaBan đ</td>
 
-                        <td class="text-center text-lg text-medium">@i.PhanLoaiSP[0].GiaKM đ</td>
+                        <td class="text-center text-lg text-medium">@i.GiaKM đ</td>
 
-                        @if (i.PhanLoaiSP[0].GiaKM != 0)
+                        @if (i.GiaKM != 0)
                         {
                             @*soluong = document.getElementById("soluong").value;*@
-                            var gia = i.PhanLoaiSP[0].GiaKM * 2;
+                            var gia = i.GiaKM * 1;
                             <td class="text-center text-lg text-medium">@gia đ</td>
                         }
                         else
                         {
-                            var gia = i.PhanLoaiSP[0].GiaBan * 2;
+                            var gia = i.GiaBan * 1;
                             <td class="text-center text-lg text-medium">@gia đ</td>
                         }
                         <td class="text-center">
-                            <a class="remove-from-cart" href="#" data-toggle="tooltip" title="Remove item"><i class="icon-cross"></i></a>
+                            <a class="remove-from-cart" href="https://localhost:5001/cart/del/@i.ID" data-toggle="tooltip" title="Remove item"><i class="icon-cross"></i></a>
                         </td>
                     </tr>
                 }

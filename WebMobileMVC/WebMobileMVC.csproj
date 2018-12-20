@@ -513,8 +513,6 @@
     <Folder Include="Views\Checkout\" />
     <Folder Include="Views\Account\" />
     <Folder Include="Helpers\" />
-    <Folder Include="Views\Shared\Components\" />
-    <Folder Include="Views\Shared\Components\Header\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="Controllers\TestHomeController.cs" />

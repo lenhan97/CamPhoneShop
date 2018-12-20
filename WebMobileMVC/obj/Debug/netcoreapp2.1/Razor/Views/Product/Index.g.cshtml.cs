@@ -95,7 +95,7 @@ using WebMobileMVC.Models;
             WriteLiteral("ge=\"location = this.value;\">\r\n                            ");
             EndContext();
             BeginContext(1116, 37, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9889326049ec438e833dbcb3ef0e7b32", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "13f64b2bc8a44467896b322d8aaaefea", async() => {
                 BeginContext(1136, 8, true);
                 WriteLiteral("Mặc định");
                 EndContext();
@@ -117,7 +117,7 @@ using WebMobileMVC.Models;
             WriteLiteral("\r\n                            ");
             EndContext();
             BeginContext(1183, 55, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d8d697dd857848889018ccfbec6e97f8", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a63a12860db8437b933598e8937b5d17", async() => {
                 BeginContext(1220, 9, true);
                 WriteLiteral("Tên A - Z");
                 EndContext();
@@ -139,7 +139,7 @@ using WebMobileMVC.Models;
             WriteLiteral("\r\n                            ");
             EndContext();
             BeginContext(1268, 45, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "63a409eff49946838803cc5a0442afbd", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6c79abe65c0c44d78efe650fea1b755e", async() => {
                 BeginContext(1295, 9, true);
                 WriteLiteral("Tên Z - A");
                 EndContext();

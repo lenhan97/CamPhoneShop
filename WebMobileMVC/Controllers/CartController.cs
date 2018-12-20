@@ -1,14 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
+﻿using System.Linq;
 using Microsoft.AspNetCore.Mvc;
-using Newtonsoft.Json;
 using WebMobileMVC.Helpers;
 using WebMobileMVC.Models;
-using static System.Collections.Specialized.BitVector32;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -22,36 +15,50 @@ namespace WebMobileMVC.Controllers
         }
 
         // GET: /<controller>/
-        public IActionResult Add(int? id)
+        public IActionResult Add(int id)
         {
-            GioHangModel gioHang = new GioHangModel();
-
-            if (id != null)
+            ListModel<SanPham> sp = ApiHelper.Get<ListModel<SanPham>>(ConstantVariable.URLBase.baseUrl + "sanpham/get/" + id);
+            if(sp!= null)
             {
-                using (WebClient webClient = new System.Net.WebClient())
+                if (sp.Content[0].PhanLoaiSP[0].SoLuong >= 1)
                 {
-                    gioHang.dsSanPham = ApiHelper.Get<ListModel<SanPham>>(ConstantVariable.URLBase.baseUrl + "sanpham/get/" + id);
-
-                    SanPham sp = new SanPham();
-                    sp = gioHang.dsSanPham.Content[0];
-
-                    foreach (SanPham i in Helpers.ConstantVariable.dsSanPham)
+                    if (ConstantVariable.dsSanPham.Any(x => x.ID == sp.Content[0].ID))
                     {
-                        if (i.ID == id)
-                        {
-
-                            break;
-                        }
+                        ConstantVariable.dsSanPham.Where(x => x.ID == sp.Content[0].ID).FirstOrDefault().SoLuong += 1;
                     }
-
-                    Helpers.ConstantVariable.dsSanPham.Add(sp);
+                    else
+                    {
+                        CartViewModel cart = new CartViewModel();
+                        cart.SoLuong = 1;
+                        cart.ID = sp.Content[0].ID;
+                        cart.Ten = sp.Content[0].Ten;
+                        cart.GiaBan = sp.Content[0].PhanLoaiSP[0].GiaBan;
+                        cart.GiaKM = sp.Content[0].PhanLoaiSP[0].GiaKM == null ? 0 : sp.Content[0].PhanLoaiSP[0].GiaKM.GetValueOrDefault();
+                        cart.Hinh = sp.Content[0].Hinh;
+                        cart.Mau = sp.Content[0].PhanLoaiSP[0].Mau;
+                        ConstantVariable.dsSanPham.Add(cart);
+                    }
                 }
             }
+
             return Redirect(Request.Headers["Referer"].ToString());
         }
 
-        public IActionResult Del(int id)
+        public IActionResult Del(int? id)
         {
+            if(id != null)
+            {
+                foreach (CartViewModel i in Helpers.ConstantVariable.dsSanPham)
+                {
+                    if (i.ID == id)
+                    {
+                        Helpers.ConstantVariable.dsSanPham.Remove(i);
+                        break;
+                    }
+                }
+                return Redirect(Request.Headers["Referer"].ToString());
+            }
+            Helpers.ConstantVariable.dsSanPham.Clear();
             return Redirect(Request.Headers["Referer"].ToString());
         }
     }
