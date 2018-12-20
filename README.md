@@ -39,7 +39,6 @@ customerY / customer2
 
 ### Hướng dẫn cài đặt
 
-Để cài đặt webapps ta cần thực hiện các bước sau:
 
 Bước 1: Clone Project về máy tại link https://github.com/hanphuoclam/CamPhoneShop (nếu đã có file cài đặt, bỏ qua bước này)
 
