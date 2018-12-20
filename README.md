@@ -63,7 +63,7 @@ Bước 4: Đổi chuỗi ConnectString trong Visual Studio
 
 ![48386722_271696613496816_6788967582591352832_n](https://user-images.githubusercontent.com/32255703/50265523-967b4080-0452-11e9-8a46-119462c11c9e.png)
 
-Đổi server name của máy
+Đổi server name của máy ( Lấy tên server name của máy tại đây)
 
 ![capture2](https://user-images.githubusercontent.com/32255703/50265667-2c16d000-0453-11e9-9507-8024f9c45328.PNG)
 
