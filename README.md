@@ -6,7 +6,7 @@ Trang web bán điện thoại di động C2C viết bằng .Net
 
 Các hướng dẫn này sẽ giúp bạn có một dự án và chạy trên máy cục bộ của mình cho mục đích phát triển và thử nghiệm. Xem triển khai sau đây để biết về cách triển khai dự án trên một hệ thống trực tiếp.
 
-### Các phần mềm sử dụng
+### Các phần mềm được sử dụng
 
 Sử dụng visual studio, sublime text, SQL server
 
