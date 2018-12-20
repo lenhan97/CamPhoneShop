@@ -69,7 +69,7 @@ Bước 4: Đổi chuỗi ConnectString trong Visual Studio
 
 ### Hướng dẫn sử dụng 
 
-Vào thư mục chứa project ThuongMaiDienTuAPI run two project
+Vào thư mục chứa project ThuongMaiDienTuAPI mở lên run two project
 
 Đối với windows
 
